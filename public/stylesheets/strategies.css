@@ -1,0 +1,59 @@
+.strategies.masthead.basic.segment {
+    margin: 0 0;
+    background: url("../images/strategy-hero-image.jpg") no-repeat center center;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover; /* Mozilla*/
+    -o-background-size: cover; /* Opera*/
+    background-size: cover;
+}
+
+.strategies.masthead.basic.segment .huge.header {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.strategies .large.header,
+.strategies .huge.header.section {
+    color: #001a4c;
+}
+
+.strategies .medium.header {
+    font-weight: 200;
+    font-size: 1.2em;
+}
+
+.strategies .striped.table {
+    font-size: 1.2em;
+}
+
+.strategies .striped.table.multi-family-gp,
+.strategies .striped.table.net-lease,
+.strategies .striped.table.net-lease-gp{
+    display: none;
+}
+
+.strategies .striped.table.multi-family {
+    margin-top: 0;
+}
+
+.strategies .striped.table td {
+    line-height: 1.5em;
+}
+
+.strategies .striped.table .category {
+    font-weight: 700;
+}
+
+.strategies .vertical.segment.first {
+    background-color: rgba(0, 0, 0, 0.04) !important
+}
+
+@media only screen and (max-width: 1150px) {
+    .ui.tabular.menu .item {
+        font-size: 1.2em !important;
+    }
+
+    .ui.tabular.menu .item.multi-family {
+        margin-right: 0;
+    }
+}

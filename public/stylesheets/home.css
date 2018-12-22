@@ -1,0 +1,83 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Roboto", serif !important;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.carousel-indicators li {
+  height: 5px !important;
+}
+
+.carousel-indicators .active {
+  background-color: #84b21e !important;
+}
+
+.carousel .ui.header {
+  color: #fff !important;
+}
+
+.lined-header {
+  line-height: 0.5;
+  text-align: center;
+  color: #fff;
+}
+.lined-header span {
+  font-family: "Roboto", serif !important;
+  font-weight: 100 !important;
+  font-size: 3rem !important;
+  display: inline-block;
+  position: relative;
+}
+.lined-header span:before,
+.lined-header span:after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  border-bottom: 3px solid #84b21e;
+  top: 0;
+  width: 200px;
+}
+.lined-header span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.lined-header span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.hero-header {
+  font-family: "Noto Serif SC", serif !important;
+  font-weight: 800;
+  color: #fff;
+  font-size: 4rem !important;
+}
+
+.jlr div img {
+  opacity: 1 !important;
+}
+
+.medium.header {
+  font-family: "Noto Serif SC", serif !important;
+  font-weight: 800;
+  font-size: 3rem !important;
+}
+
+.medium.header.roboto {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 800;
+  font-size: 3rem !important;
+}
+
+.segment.first .row {
+  text-align: left;
+}

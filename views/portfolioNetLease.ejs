@@ -1,0 +1,204 @@
+<% layout('layout_hero') -%>
+<div class="ui vertical segment first">
+  <div class="ui center aligned grid container">
+    <div class="four column stackable row desktop-group">
+      <div class="five wide left aligned column">
+        <span class="sub-heading">FILTER BY TYPE</span><br/><br/>
+        <select class="ui dropdown">
+          <option value="all">ALL</option>
+          <option value="multi-family">MULTI-FAMILY</option>
+          <option selected value="net-lease">NET LEASE</option>
+        </select>
+      </div>
+      <div class="two wide column border-right" style="margin-right: 0;">
+        <span class="sub-heading">LAUNCHED</span><br/><br/>
+        <span class="large-text">1999</span>
+      </div>
+      <div class="two wide column border-right" style="margin-right: 0;">
+        <span class="sub-heading">JOINT VENTURES</span><br/><br/>
+        <span class="large-text countUp3">0</span>
+      </div>
+      <div class="three wide column border-left">
+        <span class="sub-heading">PROJECT CAPITALIZATION</span><br/><br/>
+        <span class="large-text">$<span class="countUp4">0</span></span>
+      </div>
+    </div>
+
+    <div class="four column stackable row mobile-group">
+      <div class="five wide left aligned column">
+        <span class="sub-heading">FILTER BY TYPE</span><br/><br/>
+        <select class="ui dropdown">
+          <option value="all">ALL</option>
+          <option value="multi-family">MULTI-FAMILY</option>
+          <option selected value="net-lease">NET LEASE</option>
+        </select>
+      </div>
+      <div class="two wide left aligned column border-right" style="margin-right: 0;">
+        <span class="sub-heading">LAUNCHED</span><br/><br/>
+        <span class="large-text">1999</span>
+      </div>
+      <div class="two wide left aligned column border-right" style="margin-right: 0;">
+        <span class="sub-heading">JOINT VENTURES</span><br/><br/>
+        <span class="large-text countUp3">0</span>
+      </div>
+      <div class="two wide left aligned column border-left">
+        <span class="sub-heading">PROJECT CAPITALIZATION</span><br/><br/>
+        <span class="large-text">$<span class="countUp4">0</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui inverted vertical center aligned segment fourth net-lease">
+  <h1 class="ui inverted large header">NET LEASE</h1>
+</div>
+<!-----------------------------NET LEASE DESKTOP----------------------------------->
+<div class="ui vertical segment fifth net-lease desktop-group">
+  <div class="ui stackable grid container">
+    <% netLease.forEach(function(item, index) { %>
+
+    <!-------NET-LEASE-ONE--------->
+    <div class="row">
+      <div class="center aligned four wide column">
+        <a><img class="ui medium bordered image" data-modal="net-lease-<%= index %>"
+                src=<%= item.image ? "/images/portfolio/"+item.name.split(' ')[0]+"_"+item.location.split(',')[0].replace(/ /g,'')+".jpg" : "/images/placeholder_building.jpg" %>></a>
+      </div>
+      <div class="left aligned eight wide column">
+        <a>
+          <div class="ui large header" data-modal="net-lease-<%= index %>"><br/><%= item.name %></div>
+        </a>
+        <div class="ui medium header"><%= item.productType %> &nbsp; <%= item.projectType %><br/><%= item.location %>
+        </div>
+      </div>
+      <div class="center aligned four wide column">
+        <br/><br/>
+        <a>
+          <button class="ui huge basic secondary button" data-modal="net-lease-<%= index %>">Learn More</button>
+        </a>
+      </div>
+
+      <div class="ui modal" id="net-lease-<%= index %>">
+        <div class="ui basic padded segment">
+          <div class="ui grid container">
+            <div class="row">
+              <div class="right aligned column">
+                <span class="closeModal" data-modal="net-lease-<%= index %>">X</span>
+              </div>
+            </div>
+            <div class="two column center aligned row">
+              <div class="six wide column">
+                <img class="ui medium bordered image" src=<%= item.image ? "/images/portfolio/"+item.name.split(' ')[0]+"_"+item.location.split(',')[0].replace(/ /g,'')+".jpg" : "/images/placeholder_building.jpg" %>>
+              </div>
+              <div class="ten wide column">
+                <div class="ui left aligned large header"><%= item.name %></div>
+                <div class="ui left aligned small header"><%= item.location%></div>
+
+                <table class="ui very basic table" style="font-size: 1.2em;">
+                  <tbody>
+                  <tr>
+                    <td class="seven wide category">Date Acquired</td>
+                    <td class="nine wide  right aligned category-value"><%= item.fundingDate %></td>
+                  </tr>
+                  <tr>
+                    <td>Date Sold</td>
+                    <td class="category-value right aligned"><%= item.saleDate %></td>
+                  </tr>
+                  <tr>
+                    <td>Hanover Equity</td>
+                    <td class="category-value right aligned"><%= item.formattedEquity %></td>
+                  </tr>
+                  <tr>
+                    <td>Project Capitalization</td>
+                    <td class="category-value right aligned"><%= item.projectCapitalization %></td>
+                  </tr>
+                  <tr>
+                    <td>Project Type</td>
+                    <td class="category-value right aligned"><%= item.productType %> (<%= item.projectType %>)</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <% }) %>
+  </div>
+</div>
+
+<!-----------------------------NET LEASE MOBILE----------------------------------->
+<div class="ui vertical segment fifth net-lease mobile-group">
+  <div class="ui stackable grid container">
+    <% netLease.forEach(function(item, index) { %>
+    <div class="row">
+      <div class="center aligned four wide column">
+        <a><img class="ui medium bordered image" data-modal="net-lease-<%= index %>-mobile"
+                src=<%= item.image ? "/images/portfolio/"+item.name.split(' ')[0]+"_"+item.location.split(',')[0].replace(/ /g,'')+".jpg" : "/images/placeholder_building.jpg" %>></a>
+      </div>
+      <div class="center aligned four wide column">
+        <a>
+          <div class="ui large header" data-modal="net-lease-<%= index %>-mobile"><br/><%= item.name %></div>
+        </a>
+        <div class="ui medium header"><%= item.productType %> &nbsp; <%= item.projectType %><br/><%= item.location %>
+        </div>
+        <div class="center aligned four wide column">
+          <a>
+            <button class="ui huge basic secondary button" data-modal="net-lease-<%= index %>-mobile">Learn More
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="ui modal" id="net-lease-<%= index %>-mobile">
+        <div class="ui basic padded segment">
+          <div class="ui grid container">
+            <div class="row">
+              <div class="right aligned column closeModal">
+                <span class="closeModal" data-modal="net-lease-<%= index %>-mobile">X</span>
+              </div>
+            </div>
+            <div class="two column center aligned row">
+              <div class="six wide column">
+                <img class="ui medium bordered image" src=<%= item.image ? "/images/portfolio/"+item.name.split(' ')[0]+"_"+item.location.split(',')[0].replace(/ /g,'')+".jpg" : "/images/placeholder_building.jpg" %>>
+              </div>
+              <div class="ten wide column">
+                <div class="ui left aligned large header"><%= item.name %></div>
+                <div class="ui left aligned small header"><%= item.location %></div>
+
+                <table class="ui very basic table" style="font-size: 1.2em;">
+                  <tbody>
+                  <tr>
+                    <td class="seven wide category">Date Acquired:</td>
+                    <td class="nine wide category-value"><%= item.fundingDate %></td>
+                  </tr>
+                  <tr>
+                    <td>Date Sold: &nbsp;</td>
+                    <td class="category-value"><%= item.saleDate %></td>
+                  </tr>
+                  <tr>
+                    <td>Hanover Equity: &nbsp;</td>
+                    <td class="category-value"><%= item.formattedEquity %></td>
+                  </tr>
+                  <tr>
+                    <td>Project Capitalization: &nbsp;</td>
+                    <td class="category-value"><%= item.projectCapitalization %></td>
+                  </tr>
+                  <tr>
+                    <td>Project Type: &nbsp;</td>
+                    <td class="category-value"><%= item.productType %> (<%= item.projectType %>)</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="ui divider"></div>
+    <% }) %>
+  </div>
+</div>

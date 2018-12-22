@@ -1,0 +1,188 @@
+h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Lato', san-serif;
+}
+
+.mobile-group {
+    display: none;
+}
+
+.masthead.index {
+    top: -5px;
+    left: -5px;
+    height: 101.5%;
+    background-size: 101% 101% !important;
+    background: url("../images/home-hero-image-medium-light.jpg") no-repeat;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover; /* Mozilla*/
+    -o-background-size: cover; /* Opera*/
+    background-size: cover;
+}
+
+.masthead.index.segment {
+    min-height: 700px;
+    max-height: 930px;
+    padding: 1em 0em;
+}
+
+.masthead .logo.item img {
+    margin-right: 1em;
+}
+
+.masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+    margin-top: 3em;
+    margin-bottom: 0em;
+    font-size: 3.6em;
+    font-weight: normal;
+}
+
+.masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+.secondary.menu .active {
+    color: lightslategrey !important;
+}
+
+.secondary.menu .item:hover {
+    color: lightslategrey !important;
+}
+
+.top.fixed.menu {
+    height: 150px;
+}
+
+.menu img {
+    padding-top: 30px;
+    margin-left: 0px;
+}
+
+.right.menu .item {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.ui.footer.segment.index {
+    background-color: #ffffff;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.ui.footer.segment.index .text {
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.ui.container.index {
+    margin-top: -20px;
+}
+/*loader css*/
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../images/hanover.gif) center no-repeat #fff;
+}
+
+@media (min-width: 1920px) {
+    .masthead.index {
+        top: -5px;
+        left: -5px;
+        height: 101.5%;
+        background-size: 101% 101% !important;
+        background: url("../images/home-hero-image-large-light.jpg") no-repeat;
+        -webkit-background-size: cover; /* For WebKit*/
+        -moz-background-size: cover; /* Mozilla*/
+        -o-background-size: cover; /* Opera*/
+        background-size: cover;
+    }
+}
+
+@media (min-width: 1366px) {
+    .masthead.index {
+        top: -5px;
+        left: -5px;
+        height: 101.5%;
+        background-size: 101% 101% !important;
+        background: url("../images/home-hero-image-medium-light.jpg") no-repeat;
+        -webkit-background-size: cover; /* For WebKit*/
+        -moz-background-size: cover; /* Mozilla*/
+        -o-background-size: cover; /* Opera*/
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .ui.right.secondary.menu,
+    .ui.fixed.menu {
+        display: none !important;
+    }
+
+    .hanover-logo {
+        margin-left: 40px;
+        width: 80%;
+    }
+
+    .menu img {
+        max-width: 180px;
+        padding-top: 0;
+        margin-left: -110px;
+    }
+
+    .fa-bars {
+        display: block !important;
+        margin-right: 40px;
+    }
+    .ui.right.sidebar {
+        background-color:#003041;
+        z-index: 1000;
+    }
+    .ui.right.sidebar .item {
+        font-size: 2em;
+        font-weight: 200;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .masthead.index {
+        top: 0;
+        left: 0;
+        background: url("../images/home-hero-image-small-light.jpg") no-repeat;
+        -webkit-background-size: cover; /* For WebKit*/
+        -moz-background-size: cover; /* Mozilla*/
+        -o-background-size: cover; /* Opera*/
+        background-size: cover;
+    }
+
+    .masthead h1.ui.header {
+        font-size: 3em;
+    }
+
+    .fa-bars {
+        display: block;
+    }
+
+    .mobile-group {
+        display: block !important;
+    }
+
+    .desktop-group {
+        display: none !important;
+    }
+
+    .text.container {
+        margin-top: -150px;
+    }
+    .ui.container.index {
+        margin-top: 0px;
+    }
+}
