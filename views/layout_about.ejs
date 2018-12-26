@@ -99,7 +99,7 @@
       <a class="item contact" href="/contact">CONTACT</a>
       <a class="item contact" href="/careers">CAREERS</a>
     </div>
-    <div class="ui inverted fixed menu" style="display: block">
+    <div class="ui fixed menu" style="display: block">
       <div class="ui container">
         <a class="ui left geneva-logo" href="/home">
           <img src="/images/geneva_logo.png" />
@@ -115,18 +115,23 @@
         </div>
       </div>
       <br />
-      <div class="ui secondary menu" style="background: white; width: 100%;">
+      <div
+        class="ui inverted  menu"
+        style="background: #84B21E; width: 100%; border-radius: 0;"
+      >
         <div class="one wide column" style="margin-right: 0;">
-          <a class=" item" style="color: black;">Our Company</a>
+          <a class="item" href="/about/our_company">Our Company</a>
         </div>
         <div class="one wide column" style="margin-left: 0;margin-right: 0;">
-          <a class=" item" style="color: black;">Leadership Team</a>
+          <a class="item" href="/about/team">Leadership Team</a>
         </div>
         <div class="one wide column" style="margin-left: 0;margin-right: 0;">
-          <a class=" item" style="color: black;">Our Approach</a>
+          <a class="item" href="/about/our_approach">Our Approach</a>
         </div>
         <div class="one wide column" style="margin-left: 0;">
-          <a class=" item" style="color: black;">Investment Strategies</a>
+          <a class="item" href="/about/investment_strategies"
+            >Investment Strategies</a
+          >
         </div>
       </div>
     </div>
@@ -159,13 +164,16 @@
         <div class="ui hidden divider"></div>
         <div class="ui hidden divider"></div>
         <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
         <div class="column">
-          <h1 class="ui huge header"><%= headerTitle %></h1>
+          <h1 class="ui huge inverted header"><%= headerTitle %></h1>
         </div>
         <div class="ui hidden divider"></div>
         <div class="ui hidden divider"></div>
       </div>
-
       <%- body -%>
 
       <div class="ui vertical footer segment main">

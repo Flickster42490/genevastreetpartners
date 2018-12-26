@@ -16,7 +16,7 @@
 
 .about.masthead.basic.segment {
   margin: 0 0;
-  height: 600px;
+  height: 450px;
   background: url("https://picsum.photos/1922/1080/?random") no-repeat center
     center;
   -webkit-background-size: cover; /* For WebKit*/
@@ -82,8 +82,7 @@
   text-align: justify;
 }
 
-.about .vertical.segment.first,
-.about .vertical.segment.third {
+.about .vertical.segment.second {
   background-color: rgba(0, 0, 0, 0.04) !important;
   padding-left: 15px !important;
   padding-right: 15px !important;

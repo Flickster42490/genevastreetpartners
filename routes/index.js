@@ -1141,13 +1141,14 @@ var portfolioAll = {
 };
 
 var bios = {
-  Yarmolinsky: {
-    name: "Alex Yarmolinsky",
+  Lowinger: {
+    name: "Michael Lowinger",
     title: "President / CEO",
-    linkedin: "https://www.linkedin.com/in/alexyarmolinsky/",
-    email: "mailto:AYarmolinsky@mmcrealestate.com",
-    phone: "(650) 842-2226",
-    picture: "yarmolinsky.jpg",
+    linkedin: "https://www.linkedin.com/in/michaellowinger/",
+    email: "mailto:",
+    phone: "(888) 888-8888",
+    picture: "lowinger.jpg",
+    id: "lowinger",
     bio:
       "<p>Mr. Yarmolinsky joined Hanover as its President and Chief Executive Officer in 2017.  In this role he has oversight responsibility for all operating activities of the company.   Mr. Yarmolinsky previously served as the Executive Vice President and Chief Financial Officer of Marcus Millichap Company, Hanover’s parent company.  He has been with Marcus and Millichap since 2005 and was responsible for overseeing the entire finance function of MMC, including real estate finance, accounting, taxation and treasury. Since 2010, Mr. Yarmolinsky also served on MMC’s Board of Directors and Investment Committee.</p><p>Prior to joining Marcus and Millichap Company, Mr. Yarmolinsky worked in public accounting at Burr, Pilger and Mayer, where he began his career in 1999.  Mr. Yarmolinsky received Bachelor’s degree from the University of San Francisco and also holds a Master of Science from Golden Gate University.  Mr. Yarmolinsky is a Certified Public Accountant (inactive) and a full member of ULI.</p> "
   },
@@ -1263,13 +1264,89 @@ var bios = {
   }
 };
 
+var biosArray = [
+  [
+    {
+      name: "Michael Lowinger",
+      title: "President / CEO",
+      linkedin: "https://www.linkedin.com/in/michaellowinger/",
+      email: "mailto:",
+      phone: "(888) 888-8888",
+      picture: "lowinger.jpg",
+      id: "lowinger",
+      bio:
+        "<p>Mr. Yarmolinsky joined Hanover as its President and Chief Executive Officer in 2017.  In this role he has oversight responsibility for all operating activities of the company.   Mr. Yarmolinsky previously served as the Executive Vice President and Chief Financial Officer of Marcus Millichap Company, Hanover’s parent company.  He has been with Marcus and Millichap since 2005 and was responsible for overseeing the entire finance function of MMC, including real estate finance, accounting, taxation and treasury. Since 2010, Mr. Yarmolinsky also served on MMC’s Board of Directors and Investment Committee.</p><p>Prior to joining Marcus and Millichap Company, Mr. Yarmolinsky worked in public accounting at Burr, Pilger and Mayer, where he began his career in 1999.  Mr. Yarmolinsky received Bachelor’s degree from the University of San Francisco and also holds a Master of Science from Golden Gate University.  Mr. Yarmolinsky is a Certified Public Accountant (inactive) and a full member of ULI.</p> "
+    },
+    {
+      name: "Mark Macedo",
+      title: "CIO",
+      linkedin: "https://www.linkedin.com/in/mark-macedo-45788073/",
+      email: "mailto:mmacedo@hanoverfinancialllc.com",
+      phone: "(424) 653-2522",
+      picture: "macedo.jpg",
+      id: "macedo",
+      bio:
+        "<p>Mr. Macedo was a founding partner of the Company when originally formed in 1999. Mr. Macedo is responsible for identifying investment opportunities and managing Company operations which include strategic planning, deal sourcing, structuring and negotiations, as well as overseeing due diligence and asset management operations. Macedo was previously with Ares Management/Wrightwood. Prior to his work at Wrightwood Capital, Macedo was COO and a founding partner of Hanover Financial Company, a fund management firm founded in 1999. Hanover was acquired by Wrightwood Capital in 2008, at which time the committed institutional funds were included in the acquisition. From 1992 through 1999, Macedo held the position of West Coast Director of commercial loan originations for Heller Real Estate Financial Services, a division of Heller Financial Incorporated. Originations included commercial debt and equity product types such as floating rate non-participating mortgage debt, participating mortgage debt, participating mezzanine ('equity') debt and permanent ('conduit') debt. Macedo is an active member of ULI, ICSC, and MBA.</p><p>Mr. Macedo holds a Bachelor of Arts in Marketing and a Masters in Finance from Loyola Marymount University.</p>"
+    },
+    {
+      name: "Mark Davidson",
+      title: "Asset Management Director",
+      linkedin: "https://www.linkedin.com/in/markdavidson928/",
+      email: "mailto:mdavidson@hanoverfinancialllc.com",
+      phone: "(424) 653-2523",
+      picture: "davidson.jpg",
+      id: "davidson",
+      bio:
+        "<p>Mr. Davidson is a Director of Asset Management at Hanover Financial, LLC. He works with joint venture operating partners to develop and to implement asset management plans. This includes overseeing closings, monitoring developments, budgeting, and participating in dispositions. Prior to joining Hanover in 2015, Mr. Davidson spent the previous eight years at GE Real Estate evaluating and recommending new debt deals, performing real estate valuations, and underwriting West Coast suburban office acquisitions. Prior to GE Real Estate, he worked in institutional real estate consulting at the Townsend Group and in public accounting with Arthur Andersen.</p> <p>Mr. Davidson holds a Bachelor of Arts in Economics from UCLA and a Masters in Business Administration from Duke University’s Fuqua School of Business. Mr. Davidson is a Chartered Financial Analyst and a Certified Public Accountant. Davidson holds a California real estate broker’s license. </p>"
+    }
+  ],
+  [
+    {
+      name: "David White",
+      title: "Multifamily Sr. Director (Northern California/Seattle/Portland)",
+      linkedin: "https://www.linkedin.com/in/david-white-a3593b11/",
+      email: "mailto:dwhite@hanoverfinancialllc.com",
+      phone: "(415) 519-3434",
+      picture: "white.jpg",
+      id: "white",
+      bio:
+        "<p>Mr. White serves as Senior Director at Hanover Financial, LLC overseeing the firm’s investment activities in the Bay Area and Pacific Northwest.   Prior to joining Hanover, he served as an Executive Director at PGIM Real Estate responsible for west coast acquisition activities on behalf of PGIM’s open-ended fund series.   Mr. White began his career at KPMG LLP.</p><p>Mr. White holds an MBA from UC Berkeley Haas School of Business and BS degrees in Accounting & Finance from Indiana University’s Kelly School of Business.   Mr. White is a Certified Public Accountant (inactive) and a member of ULI.</p>"
+    }
+  ]
+];
+
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("home", {page: "home", headerTitle: "Relationship Based"});
+  res.render("home", { page: "home", headerTitle: "Relationship Based" });
 });
 
 router.get("/about", function(req, res, next) {
-  res.render("about", { page: "about", headerTitle: "Hanover At A Glance" });
+  res.render("our_company", {
+    page: "about",
+    headerTitle: "About Geneva Street Partners"
+  });
+});
+
+router.get("/about/our_company", function(req, res, next) {
+  res.render("our_company", {
+    page: "about",
+    headerTitle: "About Geneva Street Partners"
+  });
+});
+
+router.get("/about/team", function(req, res, next) {
+  res.render("team", {
+    page: "team",
+    headerTitle: "Our Leadership Team",
+    bios: biosArray
+  });
+});
+
+router.get("/about/our_approach", function(req, res, next) {
+  res.render("our_approach", {
+    page: "our_approach",
+    headerTitle: "Our Approach"
+  });
 });
 
 router.get("/contact", function(req, res, next) {
@@ -1277,7 +1354,7 @@ router.get("/contact", function(req, res, next) {
 });
 
 router.get("/home", function(req, res, next) {
-  res.render("home", {page: "home", headerTitle: "Relationship Based"});
+  res.render("home", { page: "home", headerTitle: "Relationship Based" });
 });
 
 router.get("/login", function(req, res, next) {
@@ -1358,10 +1435,6 @@ router.get("/strategies", function(req, res, next) {
     page: "strategies",
     headerTitle: "Our Strategies"
   });
-});
-
-router.get("/team", function(req, res, next) {
-  res.render("team", { page: "team", headerTitle: "Our Team" });
 });
 
 router.get("/team/:name", function(req, res, next) {

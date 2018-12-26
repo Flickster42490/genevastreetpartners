@@ -1,19 +1,90 @@
-<% layout('layout_hero') -%>
-  <div class="ui inverted vertical center aligned segment first" style="background-color: #00779f !important">
-    <h2 class="ui inverted medium header desktop-group" style="font-weight:200;">Hanover has over 25 years of experience in originating and managing joint venture equity investments
-      <br/>with local and national developers.
-    </h2>
-    <h2 class="ui inverted medium header mobile-group" style="font-weight:200; margin-top: 0; padding-left: 5px; padding-right: 5px;">Hanover has over 25 years of experience in originating and managing joint venture equity investments with local and national
-      developers.
-    </h2>
-  </div>
-  <div class="ui vertical segment second desktop-group">
-    <div class="ui container grid">
-      <div class="row">
-        <div class="center aligned column">
-          <div class="ui medium images">
+<% layout('layout_about') -%>
+<div class="ui vertical segment second desktop-group">
+  <div class="ui container grid">
+    <% for(var i=0; i < bios.length; i++) { %>
+    <div class="row">
+      <div class="center aligned column">
+        <div class="ui medium images">
+          <% for(var j=0; j < bios[i].length; j++) { %>
+          <div class="ui bordered reveal image" id="<%= bios[i][j].id %>">
+            <img
+              class="photo"
+              src="<%= '/images/'.concat(bios[i][j].picture) %>"
+            />
+            <div class="overlay">
+              <div class="overlayText">
+                <%= bios[i][j].name %> <br />
+                <br />
+                <span style="font-size: 18px; font-weight: 200;"
+                  ><%= bios[i][j].title %></span
+                >
+                <br />
+                <br />
+                <br />
+                <button class="ui big inverted button">view bio</button>
+              </div>
+            </div>
+          </div>
 
-            <div class="ui bordered fade reveal image" id="yarmolinsky">
+          <div
+            class="ui modal team desktop-group"
+            id="<% bios[i][j].id.concat('-desktop-modal') %>"
+          >
+            <div class="ui basic padded segment">
+              <div class="ui stackable grid container">
+                <div class="row">
+                  <div class="right aligned column">
+                    <span
+                      class="closeModal"
+                      data-modal="<%= bios[i][j].id.concat('-desktop-modal') %>"
+                      >X</span
+                    >
+                  </div>
+                </div>
+                <div class="two column center aligned row">
+                  <div class="four wide column">
+                    <img
+                      class="ui medium bordered image"
+                      src="<%= '/images/'.concat(bios[i][j].picture) %>"
+                    />
+                  </div>
+                  <div class="eleven wide left aligned column">
+                    <div class="ui left aligned large header">
+                      <span class="tealAqua"><%= bios[i][j].name %></span>
+                    </div>
+                    <div class="ui left aligned medium header">
+                      <span class="tealAqua"><%= bios[i][j].title %></span>
+                    </div>
+                    <div class="ui left aligned medium header">
+                      <a
+                        target="_blank"
+                        href="<%= bios[i][j].linkedin %>"
+                        title="LinkedIn"
+                        target="_blank"
+                      >
+                        <i
+                          class="fa fa-linkedin "
+                          aria-hidden="true"
+                          style="margin-left:2px;"
+                        ></i>
+                        &nbsp;&nbsp;</a
+                      >
+                      <a href="<%= bios[i][j].email %>" title="Email">
+                        <i class="fa fa-envelope " aria-hidden="true"></i>
+                        &nbsp;&nbsp;</a
+                      >
+                      <%= bios[i][j].phone %>
+                    </div>
+                    <div class="ui hidden divider"></div>
+                    <%= bios[i][j].bio %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+
+          <!-- <div class="ui bordered reveal image" id="yarmolinsky">
               <img class="photo" src="/images/yarmolinsky.jpg">
               <div class="overlay">
                 <div class="overlayText">Alex Yarmolinsky
@@ -198,11 +269,13 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </div> -->
         </div>
       </div>
-      <div class="row">
+    </div>
+    <% } %>
+    <!-- 
+    <div class="row">
         <div class="center aligned column">
           <div class="ui medium images">
 
@@ -734,193 +807,269 @@
 
           </div>
         </div>
-      </div>
+      </div> -->
+  </div>
+</div>
 
+<div class="ui vertical segment second mobile-group">
+  <div class="ui container grid">
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/Yarmolinsky">
+          <img
+            class="ui bordered medium image mobile"
+            id="yarmolinsky"
+            src="/images/yarmolinsky.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/Yarmolinsky">
+          <h2 class="ui medium header tealAqua" id="yarmolinsky">
+            Alex Yarmolinsky
+          </h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">
+          President / CEO
+        </h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/Macedo">
+          <img
+            class="ui bordered medium image mobile"
+            id="macedo"
+            src="/images/macedo.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/Macedo">
+          <h2 class="ui medium header tealAqua" id="macedo">Mark Macedo</h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">CIO</h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/Davidson">
+          <img
+            class="ui bordered medium image mobile"
+            id="davidson"
+            src="/images/davidson.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/Davidson">
+          <h2 class="ui medium header tealAqua" id="davidson">Mark Davidson</h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">
+          Asset Management Director
+        </h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/White">
+          <img
+            class="ui bordered medium image mobile"
+            id="white"
+            src="/images/white.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/White">
+          <h2 class="ui medium header tealAqua" id="white">David White</h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">
+          Multifamily Sr. Director <br />
+          Northern California/ Seattle/Portland
+        </h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/Baraghoush">
+          <img
+            class="ui bordered medium image"
+            id="baraghoush"
+            src="/images/baraghoush.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/Baraghoush">
+          <h2 class="ui medium header tealAqua" id="baraghoush">
+            Ash Baraghoush
+          </h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">
+          Multifamily Director <br />Los Angeles
+        </h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/Peterson">
+          <img
+            class="ui bordered medium image mobile"
+            id="peterson"
+            src="/images/peterson.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/Peterson">
+          <h2 class="ui medium header tealAqua" id="peterson">
+            John Paul Peterson
+          </h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">
+          Multifamily Director<br />Northern California/ Seattle/Portland
+        </h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/Chesnie">
+          <img
+            class="ui bordered medium image"
+            id="chesnie"
+            src="/images/chesnie.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/Chesnie">
+          <h2 class="ui medium header tealAqua" id="chesnie">Nate Chesnie</h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">
+          Multifamily Director <br />Orange County/San Diego
+        </h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/Rodiles">
+          <img
+            class="ui bordered medium image"
+            id="rodiles"
+            src="/images/rodiles.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/Rodiles">
+          <h2 class="ui medium header tealAqua" id="rodiles">John Rodiles</h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">
+          NNN Sr. Director
+        </h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/Tevrizian">
+          <img
+            class="ui bordered medium image"
+            id="tevrizian"
+            src="/images/tevrizian.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/Tevrizian">
+          <h2 class="ui medium header tealAqua" id="tevrizian">
+            Drew Tevrizian
+          </h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">NNN Director</h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/Samaha">
+          <img
+            class="ui bordered medium image"
+            id="samaha"
+            src="/images/samaha.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/Samaha">
+          <h2 class="ui medium header tealAqua" id="samaha">Josh Samaha</h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">
+          Investment Associate
+        </h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/SaintJohn">
+          <img
+            class="ui bordered medium image"
+            id="saintjohn"
+            src="/images/saintJohn.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/SaintJohn">
+          <h2 class="ui medium header tealAqua" id="saintjohn">
+            Vinnie Saint John
+          </h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">
+          Investment Associate
+        </h3>
+      </div>
+    </div>
+
+    <div class="ui divider"></div>
+    <div class="two column row">
+      <div class="left aligned eight wide column">
+        <a href="/Team/Alcaine">
+          <img
+            class="ui bordered medium image"
+            id="alcaine"
+            src="/images/alcaine.jpg"
+          />
+        </a>
+      </div>
+      <div class="left aligned eight wide column" style="padding-top: 50px;">
+        <a href="/Team/Alcaine">
+          <h2 class="ui medium header tealAqua" id="saintjohn">Alex Alcaine</h2>
+        </a>
+        <h3 class="ui small header" style="margin-top: 5px;">
+          Investment Associate
+        </h3>
+      </div>
     </div>
   </div>
-
-  <div class="ui vertical segment second mobile-group">
-    <div class="ui container grid">
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/Yarmolinsky">
-            <img class="ui bordered medium image mobile" id="yarmolinsky" src="/images/yarmolinsky.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/Yarmolinsky">
-            <h2 class="ui medium header tealAqua" id="yarmolinsky">Alex Yarmolinsky</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">President / CEO</h3>
-        </div>
-      </div>
-      
-      <div class="ui divider"></div>
-
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/Macedo">
-            <img class="ui bordered medium image mobile" id="macedo" src="/images/macedo.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/Macedo">
-            <h2 class="ui medium header tealAqua" id="macedo">Mark Macedo</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">CIO</h3>
-        </div>
-      </div>
-
-      <div class="ui divider"></div>
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/Davidson">
-            <img class="ui bordered medium image mobile" id="davidson" src="/images/davidson.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/Davidson">
-            <h2 class="ui medium header tealAqua" id="davidson">Mark Davidson</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">Asset Management Director</h3>
-        </div>
-      </div>
-
-      <div class="ui divider"></div>
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/White">
-            <img class="ui bordered medium image mobile" id="white" src="/images/white.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/White">
-            <h2 class="ui medium header tealAqua" id="white">David White</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">Multifamily Sr. Director <br/> Northern California/ Seattle/Portland</h3>
-        </div>
-      </div>
-
-      <div class="ui divider"></div>
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/Baraghoush">
-            <img class="ui bordered medium image" id="baraghoush" src="/images/baraghoush.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/Baraghoush">
-            <h2 class="ui medium header tealAqua" id="baraghoush">Ash Baraghoush</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">Multifamily Director <br/>Los Angeles</h3>
-        </div>
-      </div>
-
-      <div class="ui divider"></div>
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/Peterson">
-            <img class="ui bordered medium image mobile" id="peterson" src="/images/peterson.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/Peterson">
-            <h2 class="ui medium header tealAqua" id="peterson">John Paul Peterson</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">Multifamily Director<br/>Northern California/ Seattle/Portland
-          </h3>
-        </div>
-      </div>
-
-      <div class="ui divider"></div>
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/Chesnie">
-            <img class="ui bordered medium image" id="chesnie" src="/images/chesnie.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/Chesnie">
-            <h2 class="ui medium header tealAqua" id="chesnie">Nate Chesnie</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">Multifamily Director <br/>Orange County/San Diego</h3>
-        </div>
-      </div>
-
-      <div class="ui divider"></div>
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/Rodiles">
-            <img class="ui bordered medium image" id="rodiles" src="/images/rodiles.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/Rodiles">
-            <h2 class="ui medium header tealAqua" id="rodiles">John Rodiles</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">NNN Sr. Director</h3>
-        </div>
-      </div>
-
-      <div class="ui divider"></div>
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/Tevrizian">
-            <img class="ui bordered medium image" id="tevrizian" src="/images/tevrizian.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/Tevrizian">
-            <h2 class="ui medium header tealAqua" id="tevrizian">Drew Tevrizian</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">NNN Director</h3>
-        </div>
-      </div>
-
-      <div class="ui divider"></div>
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/Samaha">
-            <img class="ui bordered medium image" id="samaha" src="/images/samaha.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/Samaha">
-            <h2 class="ui medium header tealAqua" id="samaha">Josh Samaha</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">Investment Associate</h3>
-        </div>
-      </div>
-
-      <div class="ui divider"></div>
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/SaintJohn">
-            <img class="ui bordered medium image" id="saintjohn" src="/images/saintJohn.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/SaintJohn">
-            <h2 class="ui medium header tealAqua" id="saintjohn">Vinnie Saint John</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">Investment Associate</h3>
-        </div>
-      </div>
-
-      <div class="ui divider"></div>
-      <div class="two column row">
-        <div class="left aligned eight wide column">
-          <a href="/Team/Alcaine">
-            <img class="ui bordered medium image" id="alcaine" src="/images/alcaine.jpg" />
-          </a>
-        </div>
-        <div class="left aligned eight wide column" style="padding-top: 50px;">
-          <a href="/Team/Alcaine">
-            <h2 class="ui medium header tealAqua" id="saintjohn">Alex Alcaine</h2>
-          </a>
-          <h3 class="ui small header" style="margin-top: 5px;">Investment Associate</h3>
-        </div>
-      </div>
-
-    </div>
-  </div>
+</div>
