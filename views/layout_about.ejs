@@ -19,17 +19,17 @@
 
     <!-- CSS -->
     <link
-      href="https://fonts.googleapis.com/css?family=Lato"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto:100|Quicksand"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/stylesheets/dependencies/semantic.css" />
     <link rel="stylesheet" href="/stylesheets/dependencies/animate.css" />
     <link rel="stylesheet" href="/stylesheets/dependencies/icon.min.css" />
     <link rel="stylesheet" href="/stylesheets/layout_main.css" />
-    <link rel="stylesheet" href="/stylesheets/layout_hero.css" />
+    <link rel="stylesheet" href="/stylesheets/home.css" />
     <link rel="stylesheet" href="/stylesheets/about.css" />
     <link rel="stylesheet" href="/stylesheets/contact.css" />
-    <link rel="stylesheet" href="/stylesheets/portfolio.css" />
+    <link rel="stylesheet" href="/stylesheets/projects.css" />
     <link rel="stylesheet" href="/stylesheets/strategies.css" />
     <link rel="stylesheet" href="/stylesheets/team.css" />
     <link rel="stylesheet" href="/stylesheets/careers.css" />
@@ -106,8 +106,7 @@
         </a>
         <div class="right menu">
           <a class="item about" href="/about">ABOUT</a>
-          <a class="item strategies" href="/strategies">STRATEGIES</a>
-          <a class="item portfolio" href="/portfolio">PORTFOLIO</a>
+          <a class="item portfolio" href="/projects">PROJECTS</a>
 
           <a class="item login" href="/login">INVESTOR LOGIN</a>
           <a class="item contact" href="/contact">CONTACT</a>
@@ -129,9 +128,7 @@
           <a class="item" href="/about/our_approach">Our Approach</a>
         </div>
         <div class="one wide column" style="margin-left: 0;">
-          <a class="item" href="/about/investment_strategies"
-            >Investment Strategies</a
-          >
+          <a class="item" href="/about/strategies">Investment Strategies</a>
         </div>
       </div>
     </div>
@@ -169,7 +166,9 @@
         <div class="ui hidden divider"></div>
         <div class="ui hidden divider"></div>
         <div class="column">
-          <h1 class="ui huge inverted header"><%= headerTitle %></h1>
+          <h1 class="ui huge inverted header hero-header">
+            <%= headerTitle %>
+          </h1>
         </div>
         <div class="ui hidden divider"></div>
         <div class="ui hidden divider"></div>

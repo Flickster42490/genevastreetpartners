@@ -1,0 +1,37 @@
+.dimmer {
+  z-index: 90 !important;
+}
+.dimmer.active {
+  padding: 0 !important;
+  color: white;
+}
+
+.projects .masthead.basic.segment {
+  margin: 0 0;
+  height: 450px;
+  background: url("https://picsum.photos/1922/1080/?random") no-repeat center
+    center;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover; /* Mozilla*/
+  -o-background-size: cover; /* Opera*/
+  background-size: cover;
+}
+
+.ui.dimmer > .content > * {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .modal-xl {
+    width: 80%;
+    max-width: 1200px !important;
+  }
+
+  .modal-body {
+    width: 100%;
+  }
+
+  .modal-body img {
+    width: 80%;
+  }
+}

@@ -1311,10 +1311,88 @@ var biosArray = [
       id: "white",
       bio:
         "<p>Mr. White serves as Senior Director at Hanover Financial, LLC overseeing the firm’s investment activities in the Bay Area and Pacific Northwest.   Prior to joining Hanover, he served as an Executive Director at PGIM Real Estate responsible for west coast acquisition activities on behalf of PGIM’s open-ended fund series.   Mr. White began his career at KPMG LLP.</p><p>Mr. White holds an MBA from UC Berkeley Haas School of Business and BS degrees in Accounting & Finance from Indiana University’s Kelly School of Business.   Mr. White is a Certified Public Accountant (inactive) and a member of ULI.</p>"
+    },
+    {
+      name: "David White",
+      title: "Multifamily Sr. Director (Northern California/Seattle/Portland)",
+      linkedin: "https://www.linkedin.com/in/david-white-a3593b11/",
+      email: "mailto:dwhite@hanoverfinancialllc.com",
+      phone: "(415) 519-3434",
+      picture: "white.jpg",
+      id: "white",
+      bio:
+        "<p>Mr. White serves as Senior Director at Hanover Financial, LLC overseeing the firm’s investment activities in the Bay Area and Pacific Northwest.   Prior to joining Hanover, he served as an Executive Director at PGIM Real Estate responsible for west coast acquisition activities on behalf of PGIM’s open-ended fund series.   Mr. White began his career at KPMG LLP.</p><p>Mr. White holds an MBA from UC Berkeley Haas School of Business and BS degrees in Accounting & Finance from Indiana University’s Kelly School of Business.   Mr. White is a Certified Public Accountant (inactive) and a member of ULI.</p>"
+    },
+    {
+      name: "David White",
+      title: "Multifamily Sr. Director (Northern California/Seattle/Portland)",
+      linkedin: "https://www.linkedin.com/in/david-white-a3593b11/",
+      email: "mailto:dwhite@hanoverfinancialllc.com",
+      phone: "(415) 519-3434",
+      picture: "white.jpg",
+      id: "white",
+      bio:
+        "<p>Mr. White serves as Senior Director at Hanover Financial, LLC overseeing the firm’s investment activities in the Bay Area and Pacific Northwest.   Prior to joining Hanover, he served as an Executive Director at PGIM Real Estate responsible for west coast acquisition activities on behalf of PGIM’s open-ended fund series.   Mr. White began his career at KPMG LLP.</p><p>Mr. White holds an MBA from UC Berkeley Haas School of Business and BS degrees in Accounting & Finance from Indiana University’s Kelly School of Business.   Mr. White is a Certified Public Accountant (inactive) and a member of ULI.</p>"
     }
   ]
 ];
 
+var developments = [
+  {
+    name: "Geneva @ Hughes",
+    image: "geneva_hughes.png",
+    id: "geneva_hughes",
+    location: "Los Angeles, California",
+    type: "Development",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    name: "Geneva @ Hughes North",
+    image: "geneva_hughesNorth.png",
+    id: "geneva_hughesNorth",
+    location: "Los Angeles, California",
+    type: "Development",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    name: "Geneva @ Pacific",
+    image: "geneva_pacific.png",
+    id: "geneva_pacific",
+    location: "Los Angeles, California",
+    type: "Development",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    name: "Geneva @ Venice",
+    image: "geneva_venice.png",
+    id: "geneva_venice",
+    location: "Los Angeles, California",
+    type: "Development",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    name: "Micropolitan at Larchmont Village",
+    image: "micropolitan_larchmont.png",
+    id: "micropolitan_larchmont",
+    location: "Los Angeles, California",
+    type: "Development",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    name: "Micropolitan at Miracle Mile",
+    image: "micropolitan_miracle.png",
+    id: "micropolitan_miracle",
+    location: "Los Angeles, California",
+    type: "Development",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  }
+];
 /* GET home page. */
 router.get("/", function(req, res, next) {
   res.render("home", { page: "home", headerTitle: "Relationship Based" });
@@ -1344,8 +1422,31 @@ router.get("/about/team", function(req, res, next) {
 
 router.get("/about/our_approach", function(req, res, next) {
   res.render("our_approach", {
-    page: "our_approach",
+    page: "about",
     headerTitle: "Our Approach"
+  });
+});
+
+router.get("/about/strategies", function(req, res, next) {
+  res.render("strategies", {
+    page: "about",
+    headerTitle: "Investment Strategies"
+  });
+});
+
+router.get("/projects", function(req, res, next) {
+  res.render("developments", {
+    page: "projects",
+    headerTitle: "Developments",
+    developments: developments
+  });
+});
+
+router.get("/projects/developments", function(req, res, next) {
+  res.render("developments", {
+    page: "projects",
+    headerTitle: "Developments",
+    developments: developments
   });
 });
 
@@ -1359,75 +1460,6 @@ router.get("/home", function(req, res, next) {
 
 router.get("/login", function(req, res, next) {
   res.render("login");
-});
-
-router.get("/portfolio", function(req, res, next) {
-  portfolioAll.multiFamily.forEach(function(item) {
-    var equity =
-      (parseFloat(item.hanoverEquity.slice(0, -1)) / 100) *
-      parseInt(item.projectCapitalization.replace(/\D+/g, ""));
-    equity = Math.round(equity);
-    var formattedEquity = equity
-      .toString()
-      .replace(/\B(?=(?:\d{3})+(?!\d))/g, ",")
-      .replace(/(\$?)(\d[\d,]+)/g, "$$$2");
-    item.formattedEquity = formattedEquity;
-  });
-  portfolioAll.netLease.forEach(function(item) {
-    var equity =
-      (parseFloat(item.hanoverEquity.slice(0, -1)) / 100) *
-      parseInt(item.projectCapitalization.replace(/\D+/g, ""));
-    equity = Math.round(equity);
-    var formattedEquity = equity
-      .toString()
-      .replace(/\B(?=(?:\d{3})+(?!\d))/g, ",")
-      .replace(/(\$?)(\d[\d,]+)/g, "$$$2");
-    item.formattedEquity = formattedEquity;
-  });
-  res.render("portfolio", {
-    multiFamily: portfolioAll.multiFamily,
-    netLease: portfolioAll.netLease,
-    page: "portfolio",
-    headerTitle: "Our Portfolio"
-  });
-});
-
-router.get("/portfolio/multi-family", function(req, res, next) {
-  portfolioAll.multiFamily.forEach(function(item) {
-    var equity =
-      (parseFloat(item.hanoverEquity.slice(0, -1)) / 100) *
-      parseInt(item.projectCapitalization.replace(/\D+/g, ""));
-    equity = Math.round(equity);
-    var formattedEquity = equity
-      .toString()
-      .replace(/\B(?=(?:\d{3})+(?!\d))/g, ",")
-      .replace(/(\$?)(\d[\d,]+)/g, "$$$2");
-    item.formattedEquity = formattedEquity;
-  });
-  res.render("portfolioMultiFamily", {
-    multiFamily: portfolioAll.multiFamily,
-    page: "portfolio",
-    headerTitle: "Our Portfolio"
-  });
-});
-
-router.get("/portfolio/net-lease", function(req, res, next) {
-  portfolioAll.netLease.forEach(function(item) {
-    var equity =
-      (parseFloat(item.hanoverEquity.slice(0, -1)) / 100) *
-      parseInt(item.projectCapitalization.replace(/\D+/g, ""));
-    equity = Math.round(equity);
-    var formattedEquity = equity
-      .toString()
-      .replace(/\B(?=(?:\d{3})+(?!\d))/g, ",")
-      .replace(/(\$?)(\d[\d,]+)/g, "$$$2");
-    item.formattedEquity = formattedEquity;
-  });
-  res.render("portfolioNetLease", {
-    netLease: portfolioAll.netLease,
-    page: "portfolio",
-    headerTitle: "Our Portfolio"
-  });
 });
 
 router.get("/strategies", function(req, res, next) {
