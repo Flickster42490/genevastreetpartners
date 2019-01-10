@@ -1,0 +1,83 @@
+<% layout('layout_projects') -%> <br />
+<div class="ui center aligned stackable grid container">
+  <div class="row">
+    <div id="jLightroom" class="jlr">
+      <% for(var i=0; i < mezzanine.length; i++) { %>
+      <div class="image">
+        <div class="ui inverted dimmer">
+          <a
+            class="content"
+            id="<%= mezzanine[i].id %>"
+            data-toggle="modal"
+            data-target="#<%= mezzanine[i].id %>-modal"
+          >
+            <div style="margin-top: 80px;">
+              <h1 style="color: #84B21E; font-weight: 600">
+                <%= mezzanine[i].name %>
+              </h1>
+              <br />
+              <h4 style="color: #000"><%= mezzanine[i].location %></h4>
+              <h4 style="color: #000"><%= mezzanine[i].type %></h4>
+            </div>
+          </a>
+        </div>
+        <img class="ui image" src="/images/<%= mezzanine[i].image %>" />
+      </div>
+
+      <% }%>
+    </div>
+  </div>
+  <% for(var i=0; i < mezzanine.length; i++) { %>
+
+  <!-- Modal content-->
+  <div id="<%= mezzanine[i].id %>-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="ui stackable grid container">
+            <div class="two column row" style="padding: 0;">
+              <div
+                class="left aligned fourteen wide column"
+                style="margin-left: 0;"
+              >
+                <div class="ui basic segment">
+                  <h1 class="ui header"><%= mezzanine[i].name %></h1>
+                  <h4>
+                    <%= mezzanine[i].location %> | <%= mezzanine[i].type %>
+                  </h4>
+                </div>
+              </div>
+              <div class="right aligned one wide column">
+                <a
+                  class="closeModal"
+                  data-dismiss="modal"
+                  data-modal="<%= mezzanine[i] %>-modal"
+                  ><h1>&times;</h1></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            class="ui image"
+            src="/images/<%= mezzanine[i].image %>"
+            style="max-width: 90%; max-height: 450px"
+          />
+        </div>
+        <div class="modal-footer">
+          <div class="ui stackable grid container">
+            <div class="row">
+              <div class="left aligned column">
+                <div class="ui basic segment">
+                  <h4><%= mezzanine[i].description %></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }%>
+</div>

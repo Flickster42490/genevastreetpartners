@@ -32,15 +32,36 @@ p {
   width: 100% !important;
 }
 
-.lined-header {
+.geneva-logo {
+  margin-left: 0px;
+}
+
+.geneva-logo img {
+  width: 300px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.carousel-caption .lined-header {
   line-height: 0.5;
   text-align: center;
   color: #fff;
 }
-.lined-header span {
+
+.carousel-caption .lined-header span {
   font-family: "Roboto", serif !important;
   font-weight: 100 !important;
   font-size: 3rem !important;
+  display: inline-block;
+  position: relative;
+}
+.column .lined-header {
+  line-height: 0.5;
+  text-align: center;
+  color: #fff;
+}
+
+.column .lined-header span {
   display: inline-block;
   position: relative;
 }
@@ -85,6 +106,21 @@ p {
   font-family: "Roboto", sans-serif !important;
   font-weight: 800;
   font-size: 2.5rem !important;
+}
+
+.right.menu .item {
+  border: none !important;
+}
+
+.right.menu .item:before {
+  background: none !important;
+}
+
+.right.menu .item:hover {
+  background: transparent !important;
+  text-decoration: underline;
+  text-decoration-color: #84b21e;
+  text-decoration-style: solid;
 }
 
 .segment.first .row {

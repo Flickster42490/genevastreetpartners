@@ -1,6 +1,7 @@
 <% layout('layout_about') -%>
 <div class="ui vertical segment second desktop-group">
   <div class="ui center aligned container grid">
+    <div class="ui hidden divider"></div>
     <% for(var i=0; i < bios.length; i++) { %>
     <div class="row">
       <div class="ui cards">
@@ -26,16 +27,14 @@
               <!-- Modal content-->
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">
-                    &times;
-                  </button>
                   <div class="ui stackable grid container">
-                    <div class="row">
+                    <div class="row" style="padding: 0;">
                       <div class="right aligned column">
-                        <span
+                        <a
                           class="closeModal"
+                          data-dismiss="modal"
                           data-modal="<%= bios[i][j].id.concat('-desktop-modal') %>"
-                          >X</span
+                          ><h1>&times;</h1></a
                         >
                       </div>
                     </div>
@@ -74,12 +73,11 @@
                           <%= bios[i][j].phone %>
                         </div>
                         <div class="ui hidden divider"></div>
-                        <%= bios[i][j].bio %>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="modal-body"><%= bios[i][j].bio %></div>
+                <div class="modal-body" style="text-align: left"><%- bios[i][j].bio %></div>
               </div>
             </div>
           </div>
@@ -98,14 +96,15 @@
       <div class="ui left aligned basic segment">
         <h2
           class="ui inverted large header"
-          style="padding-top: 20px; padding-bottom: 20px"
+          style="padding-top: 20px; padding-bottom: 20px; font-size: 2em"
         >
           <i class="fa fa-quote-left" aria-hidden="true"></i>
           <i
             >I have known Geneva’s managing partners personally and professionally for nearly 25 years and have closed numerous transactions with them, and I’m looking forward to our continued working relationship.</i
           >&nbsp;&nbsp;<i class="fa fa-quote-right" aria-hidden="true"></i>
           <br /><br />
-          -Greg Nakahira, Managing Director, The Picerne Group
+          -Greg Nakahira, Managing Director, The Picerne Group<br />
+          &nbsp;Newport Beach, California
         </h2>
       </div>
     </div>

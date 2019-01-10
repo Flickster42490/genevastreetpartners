@@ -1,0 +1,84 @@
+<% layout('layout_projects') -%> <br />
+<div class="ui center aligned stackable grid container">
+  <div class="row">
+    <div id="jLightroom" class="jlr">
+      <% for(var i=0; i < repositioning.length; i++) { %>
+      <div class="image">
+        <div class="ui inverted dimmer">
+          <a
+            class="content"
+            id="<%= repositioning[i].id %>"
+            data-toggle="modal"
+            data-target="#<%= repositioning[i].id %>-modal"
+          >
+            <div style="margin-top: 80px;">
+              <h1 style="color: #84B21E; font-weight: 600">
+                <%= repositioning[i].name %>
+              </h1>
+              <br />
+              <h4 style="color: #000"><%= repositioning[i].location %></h4>
+              <h4 style="color: #000"><%= repositioning[i].type %></h4>
+            </div>
+          </a>
+        </div>
+        <img class="ui image" src="/images/<%= repositioning[i].image %>" />
+      </div>
+
+      <% }%>
+    </div>
+  </div>
+  <% for(var i=0; i < repositioning.length; i++) { %>
+
+  <!-- Modal content-->
+  <div id="<%= repositioning[i].id %>-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="ui stackable grid container">
+            <div class="two column row" style="padding: 0;">
+              <div
+                class="left aligned fourteen wide column"
+                style="margin-left: 0;"
+              >
+                <div class="ui basic segment">
+                  <h1 class="ui header"><%= repositioning[i].name %></h1>
+                  <h4>
+                    <%= repositioning[i].location %> | <%= repositioning[i].type
+                    %>
+                  </h4>
+                </div>
+              </div>
+              <div class="right aligned one wide column">
+                <a
+                  class="closeModal"
+                  data-dismiss="modal"
+                  data-modal="<%= repositioning[i] %>-modal"
+                  ><h1>&times;</h1></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <img
+            class="ui image"
+            src="/images/<%= repositioning[i].image %>"
+            style="max-width: 90%; max-height: 450px"
+          />
+        </div>
+        <div class="modal-footer">
+          <div class="ui stackable grid container">
+            <div class="row">
+              <div class="left aligned column">
+                <div class="ui basic segment">
+                  <h4><%= repositioning[i].description %></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }%>
+</div>

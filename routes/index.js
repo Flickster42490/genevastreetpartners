@@ -1,1144 +1,5 @@
 var express = require("express");
 var router = express.Router();
-var portfolioAll = {
-  multiFamily: [
-    {
-      name: "Axeltree Apartments",
-      location: "Milwaukie, OR",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "June 2018",
-      saleDate: "Current Investment",
-      hanoverEquity: "27.0%",
-      projectCapitalization: "$31,000,000",
-      image: true
-    },
-    {
-      name: "Capes at Ventura",
-      location: "Ventura, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "May 2018",
-      saleDate: "Current Investment",
-      hanoverEquity: "10.3%",
-      projectCapitalization: "$110,000,000",
-      image: true
-    },
-    {
-      name: "Cavanaugh Apartments",
-      location: "Seattle, WA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "August 2018",
-      saleDate: "Current Investment",
-      hanoverEquity: "27.3%",
-      projectCapitalization: "$22,000,000",
-      image: true
-    },
-    {
-      name: "The Mark Apartments",
-      location: "Hayward, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "February 2017",
-      saleDate: "Current Investment",
-      hanoverEquity: "27.3%",
-      projectCapitalization: "$35,000,000",
-      image: true
-    },
-    {
-      name: "Mansfield Apartments",
-      location: "Hollywood, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "November 2016",
-      saleDate: "Current Investment",
-      hanoverEquity: "27.6%",
-      projectCapitalization: "$28,000,000",
-      image: true
-    },
-    {
-      name: "Vues on Gordon",
-      location: "Hollywood, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "March 2016",
-      saleDate: "Current Investment",
-      hanoverEquity: "35.3%",
-      projectCapitalization: "$21,000,000",
-      image: true
-    },
-    {
-      name: "Rancho Azul Apartments",
-      location: "San Diego, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "August 2015",
-      saleDate: "February 2018",
-      hanoverEquity: "25.6%",
-      projectCapitalization: "$16,000,000",
-      image: true
-    },
-    {
-      name: "Micropolitan at Larchmont Village",
-      location: "Hollywood, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "February 2015",
-      saleDate: "Current Investment",
-      hanoverEquity: "37.1%",
-      projectCapitalization: "$15,000,000",
-      image: true
-    },
-    {
-      name: "The Bloc Apartments",
-      location: "Anaheim, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "October 2015",
-      saleDate: "December 2017",
-      hanoverEquity: "29.5%",
-      projectCapitalization: "$17,000,000",
-      image: true
-    },
-    {
-      name: "Gramercy Apartments",
-      location: "Anaheim, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "October 2014",
-      saleDate: "March 2017",
-      hanoverEquity: "24.7%",
-      projectCapitalization: "$18,000,000",
-      image: true
-    },
-    {
-      name: "The Premier on Burbank",
-      location: "Sherman Oaks, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "July 2014",
-      saleDate: "September 2016",
-      hanoverEquity: "24.9%",
-      projectCapitalization: "$13,000,000",
-      image: true
-    },
-    {
-      name: "Azul Apartments",
-      location: "Anaheim, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "October 2014",
-      saleDate: "September 2016",
-      hanoverEquity: "24.8%",
-      projectCapitalization: "$17,000,000",
-      image: true
-    },
-    {
-      name: "Micropolitan at Urban Lights Apartments",
-      location: "Los Angeles, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "October 2013",
-      saleDate: "March 2016",
-      hanoverEquity: "26.3%",
-      projectCapitalization: "$18,000,000",
-      image: true
-    },
-    {
-      name: "San Antonio Apartments",
-      location: "Moutain View, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "December  2012",
-      saleDate: "September 2016",
-      hanoverEquity: "16.4%",
-      projectCapitalization: "$75,000,000",
-      image: false
-    },
-    {
-      name: "Civic Apartments",
-      location: "Walnut Creek, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "October 2012",
-      saleDate: "September 2016",
-      hanoverEquity: "16.9%",
-      projectCapitalization: "$94,000,000",
-      image: false
-    },
-    {
-      name: "Morrison Apartments II",
-      location: "Los Angeles, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "May 2011",
-      saleDate: "April 2016",
-      hanoverEquity: "31.1%",
-      projectCapitalization: "$5,000,000",
-      image: false
-    },
-    {
-      name: "Morrison Apartments I",
-      location: "Los Angeles, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "May 2011",
-      saleDate: "April 2016",
-      hanoverEquity: "34.7%",
-      projectCapitalization: "$5,000,000",
-      image: false
-    },
-    {
-      name: "Alexan Littleton Apartments",
-      location: "Denver, CO",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "May 2011",
-      saleDate: "April 2016",
-      hanoverEquity: "21.1%",
-      projectCapitalization: "$54,000,000",
-      image: false
-    },
-    {
-      name: "The Icon USC Student Housing",
-      location: "Los Angeles, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "January 2011",
-      saleDate: "January 2014",
-      hanoverEquity: "14.9%",
-      projectCapitalization: "$34,000,000",
-      image: false
-    },
-    {
-      name: "Palacio Apartments",
-      location: "Las Vegas, NV",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "November 2010",
-      saleDate: "November 2013",
-      hanoverEquity: "22.4%",
-      projectCapitalization: "$35,000,000",
-      image: false
-    },
-    {
-      name: "Loreto Apartments",
-      location: "Las Vegas, NV",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "November 2010",
-      saleDate: "November 2013",
-      hanoverEquity: "23.2%",
-      projectCapitalization: "$42,000,000",
-      image: false
-    },
-    {
-      name: "Aldrea at Estrella Falls Apt",
-      location: "Phoenix, AZ",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "October 2010",
-      saleDate: "September 2015",
-      hanoverEquity: "18.9%",
-      projectCapitalization: "$23,000,000",
-      image: false
-    },
-    {
-      name: "University Park Apartments",
-      location: "Riverside, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "October 2007",
-      saleDate: "October 2009",
-      hanoverEquity: "12.4%",
-      projectCapitalization: "$45,000,000",
-      image: false
-    },
-    {
-      name: "Heritage Square Apartments",
-      location: "Riverside, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "October 2007",
-      saleDate: "October 2009",
-      hanoverEquity: "14.3%",
-      projectCapitalization: "$29,000,000",
-      image: false
-    },
-    {
-      name: "Fairway Glenn Apartments",
-      location: "San Jose, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "April 2007",
-      saleDate: "November 2011",
-      hanoverEquity: "17.1%",
-      projectCapitalization: "$28,000,000",
-      image: false
-    },
-    {
-      name: "Century Place",
-      location: "Los Angeles, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "December  2006",
-      saleDate: "October 2011",
-      hanoverEquity: "14.8%",
-      projectCapitalization: "$57,000,000",
-      image: false
-    },
-    {
-      name: "El Dorado Point",
-      location: "Moreno Valley, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "October 2006",
-      saleDate: "June 2008",
-      hanoverEquity: "19.0%",
-      projectCapitalization: "$45,000,000",
-      image: false
-    },
-    {
-      name: "Sterling Apartments",
-      location: "Los Felix, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "March 2006",
-      saleDate: "February 2009",
-      hanoverEquity: "19.2%",
-      projectCapitalization: "$19,000,000",
-      image: false
-    },
-    {
-      name: "Lincoln Oaks",
-      location: "Santa Maria, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "May 2005",
-      saleDate: "April 2008",
-      hanoverEquity: "24.3%",
-      projectCapitalization: "$25,000,000",
-      image: false
-    },
-    {
-      name: "Harbor Island",
-      location: "Alameda, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "September 2005",
-      saleDate: "March 2008",
-      hanoverEquity: "20.3%",
-      projectCapitalization: "$123,000,000",
-      image: false
-    },
-    {
-      name: "Bayside Willows",
-      location: "Pinole, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "August 2005",
-      saleDate: "July 2008",
-      hanoverEquity: "26.8%",
-      projectCapitalization: "$22,000,000",
-      image: false
-    },
-    {
-      name: "Ivy Towne",
-      location: "Davis, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "August 2005",
-      saleDate: "July 2008",
-      hanoverEquity: "28.3%",
-      projectCapitalization: "$28,000,000",
-      image: false
-    },
-    {
-      name: "Casa de Valencia",
-      location: "Napa, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "August 2005",
-      saleDate: "July 2008",
-      hanoverEquity: "39.8%",
-      projectCapitalization: "$9,000,000",
-      image: false
-    },
-    {
-      name: "Somerset on Garfield Apartments",
-      location: "Montebello, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "December  2004",
-      saleDate: "November 2008",
-      hanoverEquity: "20.8%",
-      projectCapitalization: "$36,000,000",
-      image: false
-    },
-    {
-      name: "Vanowen Apartments",
-      location: "Van Nuys, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "October 2004",
-      saleDate: "March 2007",
-      hanoverEquity: "21.5%",
-      projectCapitalization: "$5,000,000",
-      image: false
-    },
-    {
-      name: "Variel Apartments",
-      location: "Canoga Park, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "September 2004",
-      saleDate: "March 2007",
-      hanoverEquity: "23.0%",
-      projectCapitalization: "$8,000,000",
-      image: false
-    },
-    {
-      name: "Mountain Vista Apartments",
-      location: "Rancho Cucamonga, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "May 2004",
-      saleDate: "February 2006",
-      hanoverEquity: "18.0%",
-      projectCapitalization: "$76,000,000",
-      image: false
-    },
-    {
-      name: "Basque Manor Apartments",
-      location: "Fullerton, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "March 2004",
-      saleDate: "October 2005",
-      hanoverEquity: "17.3%",
-      projectCapitalization: "$11,000,000",
-      image: false
-    },
-    {
-      name: "Arrowhead Apartments",
-      location: "Stanton, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "January 2004",
-      saleDate: "July 2005",
-      hanoverEquity: "19.4%",
-      projectCapitalization: "$22,000,000",
-      image: false
-    },
-    {
-      name: "Lakewood Manor Apartments",
-      location: "Lakewood, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "November 2004",
-      saleDate: "January 2006",
-      hanoverEquity: "10.2%",
-      projectCapitalization: "$77,000,000",
-      image: false
-    },
-    {
-      name: "3810 Wilshire",
-      location: "Los Angeles, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "September 2003",
-      saleDate: "January 2005",
-      hanoverEquity: "10.4%",
-      projectCapitalization: "$52,000,000",
-      image: false
-    },
-    {
-      name: "Park Place Apartments",
-      location: "Santa Ana, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "January 2002",
-      saleDate: "March 2004",
-      hanoverEquity: "18.0%",
-      projectCapitalization: "$19,000,000",
-      image: false
-    },
-    {
-      name: "Nantucket Apartments",
-      location: "Santa Ana, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "December  2001",
-      saleDate: "December  2002",
-      hanoverEquity: "15.6%",
-      projectCapitalization: "$16,000,000",
-      image: false
-    },
-    {
-      name: "Gramercy Apts",
-      location: "Los Angeles, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "July 2001",
-      saleDate: "May 2002",
-      hanoverEquity: "18.4%",
-      projectCapitalization: "$4,000,000",
-      image: false
-    },
-    {
-      name: "Kingsley Apts",
-      location: "Los Angeles, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "July 2001",
-      saleDate: "April 2002",
-      hanoverEquity: "18.5%",
-      projectCapitalization: "$8,000,000",
-      image: false
-    },
-    {
-      name: "Parthenia Court Apartments",
-      location: "Canoga Park, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "June 2001",
-      saleDate: "September 2002",
-      hanoverEquity: "15.4%",
-      projectCapitalization: "$5,000,000",
-      image: false
-    },
-    {
-      name: "Palermo",
-      location: "Santa Monica, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "May 2001",
-      saleDate: "December  2003",
-      hanoverEquity: "21.2%",
-      projectCapitalization: "$10,000,000",
-      image: false
-    },
-    {
-      name: "Verona Apartments",
-      location: "Santa Monica, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "April 2001",
-      saleDate: "September 2003",
-      hanoverEquity: "20.0%",
-      projectCapitalization: "$11,000,000",
-      image: true
-    },
-    {
-      name: "Livorno Apartments",
-      location: "Santa Monica, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "April 2001",
-      saleDate: "September 2003",
-      hanoverEquity: "20.0%",
-      projectCapitalization: "$11,000,000",
-      image: true
-    },
-    {
-      name: "Parthenia Plaza Apartments",
-      location: "Canoga Park, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "March 2001",
-      saleDate: "September 2002",
-      hanoverEquity: "16.6%",
-      projectCapitalization: "$5,000,000",
-      image: false
-    },
-    {
-      name: "Village Grove Apartments",
-      location: "Panorama City, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "February 2001",
-      saleDate: "March 2002",
-      hanoverEquity: "40.5%",
-      projectCapitalization: "$2,000,000",
-      image: false
-    },
-    {
-      name: "Village Green Apartments",
-      location: "Panorama City, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "February 2001",
-      saleDate: "February 2002",
-      hanoverEquity: "11.3%",
-      projectCapitalization: "$11,000,000",
-      image: false
-    },
-    {
-      name: "Sandstone Apartments",
-      location: "Bellevue, WA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "December  2000",
-      saleDate: "August 2002",
-      hanoverEquity: "13.1%",
-      projectCapitalization: "$17,000,000",
-      image: false
-    },
-    {
-      name: "La Fayette Park Place Apts.",
-      location: "Los Angeles, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "December  2000",
-      saleDate: "March 2002",
-      hanoverEquity: "17.8%",
-      projectCapitalization: "$6,000,000",
-      image: false
-    },
-    {
-      name: "Playa del Rey",
-      location: "Playa del Rey, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "September 2000",
-      saleDate: "January 2001",
-      hanoverEquity: "17.2%",
-      projectCapitalization: "$27,000,000",
-      image: false
-    },
-    {
-      name: "Colony Park Apartments",
-      location: "Azusa, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "June 2000",
-      saleDate: "May 2001",
-      hanoverEquity: "16.8%",
-      projectCapitalization: "$10,000,000",
-      image: false
-    },
-    {
-      name: "Revello Apartments",
-      location: "Santa Monica, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "March 2000",
-      saleDate: "February 2003",
-      hanoverEquity: "16.7%",
-      projectCapitalization: "$11,000,000",
-      image: true
-    },
-    {
-      name: "Oakcrest Villas Apartments",
-      location: "Riverside, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "March 2000",
-      saleDate: "January 2002",
-      hanoverEquity: "19.2%",
-      projectCapitalization: "$6,000,000",
-      image: false
-    },
-    {
-      name: "Primrose",
-      location: "Denver, CO",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "January 2000",
-      saleDate: "January 2001",
-      hanoverEquity: "20.0%",
-      projectCapitalization: "$3,000,000",
-      image: false
-    },
-    {
-      name: "Venezia Apartments",
-      location: "Santa Monica, CA",
-      productType: "Apartment",
-      projectType: "Development",
-      fundingDate: "October 1999",
-      saleDate: "January 2002",
-      hanoverEquity: "17.2%",
-      projectCapitalization: "$10,000,000",
-      image: true
-    },
-    {
-      name: "Villa Manana Apartments",
-      location: "Phoenix, AZ",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "December  1999",
-      saleDate: "August 2002",
-      hanoverEquity: "17.8%",
-      projectCapitalization: "$13,000,000",
-      image: false
-    },
-    {
-      name: "Park View Apartments",
-      location: "Reseda, CA",
-      productType: "Apartment",
-      projectType: "Value-Add",
-      fundingDate: "October 1999",
-      saleDate: "May 2000",
-      hanoverEquity: "17.5%",
-      projectCapitalization: "$6,000,000",
-      image: false
-    }
-  ],
-  netLease: [
-    {
-      name: "Learning Care Group - Apex",
-      location: "Apex, NC",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "April 2018",
-      saleDate: "Current Investment",
-      hanoverEquity: "18.6%",
-      projectCapitalization: "$5,000,000",
-      image: true
-    },
-    {
-      name: "6140 Lake Murray Starbucks",
-      location: "La Mesa, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "October 2016",
-      saleDate: "March 2018",
-      hanoverEquity: "28.0%",
-      projectCapitalization: "$3,000,000",
-      image: true
-    },
-    {
-      name: "Palmdale Plaza",
-      location: "Palmdale, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "April 2016",
-      saleDate: "May 2018",
-      hanoverEquity: "34.2%",
-      projectCapitalization: "$16,067,000",
-      image: true
-    },
-    {
-      name: "Madison Plaza",
-      location: "Riverside, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "February 2016",
-      saleDate: "Current Investment",
-      hanoverEquity: "38.3%",
-      projectCapitalization: "$20,000,000",
-      image: true
-    },
-    {
-      name: "Lake Elsinore Center",
-      location: "Lake Elsinore, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "June 2016",
-      saleDate: "Current Investment",
-      hanoverEquity: "41.9%",
-      projectCapitalization: "$27,000,000",
-      image: true
-    },
-    {
-      name: "Orland Park Center",
-      location: "Orland Park, IL",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "October 2015",
-      saleDate: "March 2017",
-      hanoverEquity: "20.0%",
-      projectCapitalization: "$6,000,000",
-      image: true
-    },
-    {
-      name: "Pioneer Blvd Starbucks",
-      location: "Norwalk, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "September 2015",
-      saleDate: "March 2017",
-      hanoverEquity: "29.9%",
-      projectCapitalization: "$3,000,000",
-      image: true
-    },
-    {
-      name: "Bradley Center",
-      location: "Bradley, IL",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "August 2015",
-      saleDate: "Current Investment",
-      hanoverEquity: "21.0%",
-      projectCapitalization: "$6,000,000",
-      image: true
-    },
-    {
-      name: "Arcadia Aldi",
-      location: "Arcadia, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "September 2014",
-      saleDate: "December  2015",
-      hanoverEquity: "33.0%",
-      projectCapitalization: "$7,000,000",
-      image: true
-    },
-    {
-      name: "Victorville Center",
-      location: "Victorville, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "August 2014",
-      saleDate: "March 2016",
-      hanoverEquity: "30.1%",
-      projectCapitalization: "$10,000,000",
-      image: true
-    },
-    {
-      name: "Sacramento Smart & Final",
-      location: "Sacramento, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "June 2014",
-      saleDate: "April 2015",
-      hanoverEquity: "33.6%",
-      projectCapitalization: "$8,000,000",
-      image: false
-    },
-    {
-      name: "Winston Plaza",
-      location: "Chicago, IL",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "May 2011",
-      saleDate: "June 2017",
-      hanoverEquity: "16.3%",
-      projectCapitalization: "$40,000,000",
-      image: false
-    },
-    {
-      name: "Cap Rock Industrial Portfolio",
-      location: "Riverside, CA",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "August 2010",
-      saleDate: "September 2012",
-      hanoverEquity: "85.1%",
-      projectCapitalization: "$5,000,000",
-      image: false
-    },
-    {
-      name: "Cinema Place",
-      location: "Hayward, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "November 2007",
-      saleDate: "November 2009",
-      hanoverEquity: "19.7%",
-      projectCapitalization: "$16,000,000",
-      image: true
-    },
-    {
-      name: "Berg",
-      location: "Las Vegas, NV",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "April 2007",
-      saleDate: "April 2009",
-      hanoverEquity: "22.2%",
-      projectCapitalization: "$20,000,000",
-      image: false
-    },
-    {
-      name: "Buffalo Park",
-      location: "Las Vegas, NV",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "January 2007",
-      saleDate: "January 2009",
-      hanoverEquity: "13.2%",
-      projectCapitalization: "$47,000,000",
-      image: false
-    },
-    {
-      name: "Civic Center Plaza",
-      location: "San Marcos, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "August 2006",
-      saleDate: "October 2011",
-      hanoverEquity: "14.8%",
-      projectCapitalization: "$13,000,000",
-      image: false
-    },
-    {
-      name: "Vineyard Center",
-      location: "Rancho Cucamonga, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "December  2005",
-      saleDate: "June 2008",
-      hanoverEquity: "16.6%",
-      projectCapitalization: "$26,000,000",
-      image: false
-    },
-    {
-      name: "Clifford Meridian Center",
-      location: "Riverside, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "January 2005",
-      saleDate: "January 2007",
-      hanoverEquity: "18.2%",
-      projectCapitalization: "$9,000,000",
-      image: false
-    },
-    {
-      name: "Mira Loma Clifford",
-      location: "Mira Loma, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "February 2004",
-      saleDate: "February 2005",
-      hanoverEquity: "19.2%",
-      projectCapitalization: "$6,000,000",
-      image: false
-    },
-    {
-      name: "Mira Loma Davis",
-      location: "Mira Loma, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "February 2004",
-      saleDate: "January 2005",
-      hanoverEquity: "16.8%",
-      projectCapitalization: "$9,000,000",
-      image: false
-    },
-    {
-      name: "LMA Industrial Portfolio",
-      location: "Pleasanton, CA",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "November 2004",
-      saleDate: "March 2007",
-      hanoverEquity: "17.8%",
-      projectCapitalization: "$32,000,000",
-      image: false
-    },
-    {
-      name: "Norwalk WalMart Retail",
-      location: "Norwalk, CA",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "March 2003",
-      saleDate: "October 2004",
-      hanoverEquity: "25.9%",
-      projectCapitalization: "$4,000,000",
-      image: false
-    },
-    {
-      name: "Pacific Center",
-      location: "Tustin, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "October 2003",
-      saleDate: "March 2005",
-      hanoverEquity: "21.4%",
-      projectCapitalization: "$10,000,000",
-      image: false
-    },
-    {
-      name: "Mountain View Center",
-      location: "Chino, CA",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "July 2003",
-      saleDate: "March 2006",
-      hanoverEquity: "23.9%",
-      projectCapitalization: "$21,000,000",
-      image: false
-    },
-    {
-      name: "Wald Center",
-      location: "Irvine, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "July 2003",
-      saleDate: "December  2004",
-      hanoverEquity: "19.4%",
-      projectCapitalization: "$9,000,000",
-      image: false
-    },
-    {
-      name: "Tustin Center",
-      location: "Tustin, CA",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "March 2003",
-      saleDate: "April 2005",
-      hanoverEquity: "19.0%",
-      projectCapitalization: "$19,000,000",
-      image: false
-    },
-    {
-      name: "Lambert Park",
-      location: "La Habra, CA",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "November 2003",
-      saleDate: "March 2005",
-      hanoverEquity: "22.8%",
-      projectCapitalization: "$16,000,000",
-      image: false
-    },
-    {
-      name: "Rancho Cucamonga Industrial",
-      location: "Rancho Cucamonga, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "December  2003",
-      saleDate: "March 2006",
-      hanoverEquity: "15.3%",
-      projectCapitalization: "$7,000,000",
-      image: false
-    },
-    {
-      name: "Bypass Plaza Retail",
-      location: "Colorado Springs, CO",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "December  2002",
-      saleDate: "December  2002",
-      hanoverEquity: "4.7%",
-      projectCapitalization: "$11,000,000",
-      image: false
-    },
-    {
-      name: "Seco Canyon Plaza I",
-      location: "Santa Clarita, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "June 2001",
-      saleDate: "August 2002",
-      hanoverEquity: "16.3%",
-      projectCapitalization: "$6,000,000",
-      image: false
-    },
-    {
-      name: "Fullerton Industrial Park",
-      location: "Fullerton, CA",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "January 2001",
-      saleDate: "July 2004",
-      hanoverEquity: "17.7%",
-      projectCapitalization: "$21,000,000",
-      image: false
-    },
-    {
-      name: "Dyer Center",
-      location: "Santa Ana, CA",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "September 2000",
-      saleDate: "May 2002",
-      hanoverEquity: "16.2%",
-      projectCapitalization: "$12,000,000",
-      image: false
-    },
-    {
-      name: "Plaza del Rancho",
-      location: "Valencia, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "June 2000",
-      saleDate: "June 2002",
-      hanoverEquity: "24.9%",
-      projectCapitalization: "$8,000,000",
-      image: false
-    },
-    {
-      name: "Dyer Street Retail",
-      location: "Union City, CA",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "July 1999",
-      saleDate: "March 2002",
-      hanoverEquity: "21.3%",
-      projectCapitalization: "$16,000,000",
-      image: false
-    },
-    {
-      name: "Snappy Cheyenne",
-      location: "Las Vegas, NV",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "December  1999",
-      saleDate: "July 2001",
-      hanoverEquity: "25.8%",
-      projectCapitalization: "$3,000,000",
-      image: false
-    },
-    {
-      name: "Arby's Alma Queen",
-      location: "Phoenix, AZ",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "November 1999",
-      saleDate: "March 2001",
-      hanoverEquity: "20.4%",
-      projectCapitalization: "$2,000,000",
-      image: false
-    },
-    {
-      name: "San Savaine",
-      location: "Mira Loma, CA",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "November 1999",
-      saleDate: "January 2001",
-      hanoverEquity: "28.7%",
-      projectCapitalization: "$7,000,000",
-      image: false
-    },
-    {
-      name: "Arby's Val Vista",
-      location: "Phoenix, AZ",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "November 1999",
-      saleDate: "August 2000",
-      hanoverEquity: "11.7%",
-      projectCapitalization: "$2,000,000",
-      image: false
-    },
-    {
-      name: "Amar Center",
-      location: "City of Industry, CA",
-      productType: "Net Lease",
-      projectType: "Value-Add",
-      fundingDate: "August 1999",
-      saleDate: "August 2000",
-      hanoverEquity: "19.2%",
-      projectCapitalization: "$6,000,000",
-      image: false
-    },
-    {
-      name: "Snappy Eastern Pebble",
-      location: "Las Vegas, NV",
-      productType: "Net Lease",
-      projectType: "Development",
-      fundingDate: "May 1999",
-      saleDate: "April 2000",
-      hanoverEquity: "19.5%",
-      projectCapitalization: "$3,000,000",
-      image: false
-    }
-  ]
-};
 
 var bios = {
   Lowinger: {
@@ -1268,129 +129,418 @@ var biosArray = [
   [
     {
       name: "Michael Lowinger",
-      title: "President / CEO",
+      title: "Managing Partner",
       linkedin: "https://www.linkedin.com/in/michaellowinger/",
       email: "mailto:",
       phone: "(888) 888-8888",
       picture: "lowinger.jpg",
       id: "lowinger",
       bio:
-        "<p>Mr. Yarmolinsky joined Hanover as its President and Chief Executive Officer in 2017.  In this role he has oversight responsibility for all operating activities of the company.   Mr. Yarmolinsky previously served as the Executive Vice President and Chief Financial Officer of Marcus Millichap Company, Hanover’s parent company.  He has been with Marcus and Millichap since 2005 and was responsible for overseeing the entire finance function of MMC, including real estate finance, accounting, taxation and treasury. Since 2010, Mr. Yarmolinsky also served on MMC’s Board of Directors and Investment Committee.</p><p>Prior to joining Marcus and Millichap Company, Mr. Yarmolinsky worked in public accounting at Burr, Pilger and Mayer, where he began his career in 1999.  Mr. Yarmolinsky received Bachelor’s degree from the University of San Francisco and also holds a Master of Science from Golden Gate University.  Mr. Yarmolinsky is a Certified Public Accountant (inactive) and a full member of ULI.</p> "
+        "As Managing Partner and co-founder of both Geneva Street Partners and Geneva Street Capital Partners, Lowinger is responsible for the strategic direction of Geneva and its affiliates, including acquisitions, investment decisions, investor relationships, and operating policy. <br/><br/> Prior to and then simultaneous with the formation of Geneva, Lowinger was Managing Director of Hanover Financial, LLC for 19 years, where he identified and oversaw all investments, partner and investor relationships, and asset management. Before Hanover, Lowinger was Executive Vice President - Western Regional Director for Heller Financial, an affiliate of Fuji Bank of Japan (Heller was acquired by G.E. Capital in 2001) that provided bridge debt, mezzanine, and preferred equity capital, as well as joint venture equity. <br/><br/> Lowinger is a Los Angeles area native. He has a Bachelor’s of Arts in Real Estate Finance from San Diego State University and a Master’s of Business Administration from Pepperdine University. He serves as a member of the Real Estate Principals Organization of the Jewish Federation of Greater Los Angeles, and the Real Estate Division of National Jewish Fund. Lowinger and his wife of 34 years, Cynthia, have five children and two toddler grandchildren, and divide their time between homes in Los Angeles and Denver, Colorado."
     },
     {
       name: "Mark Macedo",
-      title: "CIO",
+      title: "Managing Partner",
       linkedin: "https://www.linkedin.com/in/mark-macedo-45788073/",
       email: "mailto:mmacedo@hanoverfinancialllc.com",
-      phone: "(424) 653-2522",
+      phone: "(888) 888-8888",
       picture: "macedo.jpg",
       id: "macedo",
       bio:
-        "<p>Mr. Macedo was a founding partner of the Company when originally formed in 1999. Mr. Macedo is responsible for identifying investment opportunities and managing Company operations which include strategic planning, deal sourcing, structuring and negotiations, as well as overseeing due diligence and asset management operations. Macedo was previously with Ares Management/Wrightwood. Prior to his work at Wrightwood Capital, Macedo was COO and a founding partner of Hanover Financial Company, a fund management firm founded in 1999. Hanover was acquired by Wrightwood Capital in 2008, at which time the committed institutional funds were included in the acquisition. From 1992 through 1999, Macedo held the position of West Coast Director of commercial loan originations for Heller Real Estate Financial Services, a division of Heller Financial Incorporated. Originations included commercial debt and equity product types such as floating rate non-participating mortgage debt, participating mortgage debt, participating mezzanine ('equity') debt and permanent ('conduit') debt. Macedo is an active member of ULI, ICSC, and MBA.</p><p>Mr. Macedo holds a Bachelor of Arts in Marketing and a Masters in Finance from Loyola Marymount University.</p>"
+        "As Managing Partner and co-founder of both Geneva Street Partners and Geneva Street Capital Partners, Macedo oversees credit decisions, underwriting, investment policy, asset management, capital relationships, accounting and investor communications. <br/><br/>For 19 years prior to and then simultaneous with the formation of Geneva, Macedo was Managing Director-Chief Investment Officer of Hanover Financial, LLC where he oversaw all investment, underwriting and credit decisions. Macedo is an adjunct professor and chairperson of the Real Estate Advisory Council of Loyola Marymount University, where he teaches real estate development, real estate financial analysis, and real estate negotiation. Prior to Hanover, Macedo was Regional Director of Asset Management for the Western United States for Heller Financial, where he oversaw a portfolio of over $1 billion. Prior to Heller Macedo was a real estate consultant with Robert Charles Lesser and Company where he performed strategic, financial, and market analyses for over 100 consulting assignments throughout the United States covering all real estate uses, including commercial office and industrial, large scale single- and multifamily residential, regional and community serving retail, and urban mixed-use projects.    <br/><br/>Macedo holds a Bachelor’s of Arts and a Master’s of Business Administration in Finance from Loyola Marymount University. Macedo is an accomplished musician and composer, and oversees the non-profit CitySound, which performs throughout California, and has released a successful CD, Second Chance. Macedo and his wife Shannon are both Los Angeles natives, residing in the Westchester area of Los Angeles with their two children in their early twenties. "
     },
     {
-      name: "Mark Davidson",
-      title: "Asset Management Director",
-      linkedin: "https://www.linkedin.com/in/markdavidson928/",
-      email: "mailto:mdavidson@hanoverfinancialllc.com",
-      phone: "(424) 653-2523",
-      picture: "davidson.jpg",
-      id: "davidson",
+      name: "Jose Sanchez",
+      title: "Managing Partner",
+      linkedin: "https://www.linkedin.com",
+      email: "mailto:",
+      phone: "(888) 888-8888",
+      picture: "placeholder_person.png",
+      id: "sanchez",
       bio:
-        "<p>Mr. Davidson is a Director of Asset Management at Hanover Financial, LLC. He works with joint venture operating partners to develop and to implement asset management plans. This includes overseeing closings, monitoring developments, budgeting, and participating in dispositions. Prior to joining Hanover in 2015, Mr. Davidson spent the previous eight years at GE Real Estate evaluating and recommending new debt deals, performing real estate valuations, and underwriting West Coast suburban office acquisitions. Prior to GE Real Estate, he worked in institutional real estate consulting at the Townsend Group and in public accounting with Arthur Andersen.</p> <p>Mr. Davidson holds a Bachelor of Arts in Economics from UCLA and a Masters in Business Administration from Duke University’s Fuqua School of Business. Mr. Davidson is a Chartered Financial Analyst and a Certified Public Accountant. Davidson holds a California real estate broker’s license. </p>"
+        "As Managing Partner and co-founder of Geneva Street Capital Partners, Sanchez oversees this affiliate entity and staff, and is responsible for identifying, evaluating, and closing mezzanine and preferred equity investment opportunities.  He additionally works together with the team in establishing and managing investor/capital market relationships. <br/><br/>Prior to co-founding Geneva Street Capital Partners, Sanchez was Los Angeles Regional Director of Hanover Financial, LLC responsible for identifying and closing private equity and joint venture relationships for value-add and development multifamily, office and industrial projects. Sanchez previously spent four year with Ares Management, originating and structuring senior mortgages, mezzanine, preferred equity and common equity for multifamily real estate transactions. Prior to Ares, Sanchez worked at QVT Mount Auburn Capital and at Bank of America in its Global Corporate Investment Banking Division. <br/><br/>Sanchez holds a Bachelor of Arts in Economics, with a minor in Accounting, from UCLA. He is the co-founder of the Real Estate Division of the San Francisco Bay Area Make-A-Wish Foundation, as well as serves on the board of the Ziman Center for Real Estate at UCLA. Sanchez is an Accomplished coach of his son’s basketball team which currently has a record of 27-0. A native of the San Francisco Bay Area, Sanchez and his wife Maria have three children and reside in Santa Monica."
     }
   ],
   [
     {
-      name: "David White",
-      title: "Multifamily Sr. Director (Northern California/Seattle/Portland)",
-      linkedin: "https://www.linkedin.com/in/david-white-a3593b11/",
-      email: "mailto:dwhite@hanoverfinancialllc.com",
-      phone: "(415) 519-3434",
-      picture: "white.jpg",
-      id: "white",
+      name: "Samuel Landman",
+      title: "Director of Capital Markets and Investor Relations",
+      linkedin: "https://www.linkedin.com/in/",
+      email: "mailto:",
+      phone: "(888) 888-8888",
+      picture: "placeholder_person.png",
+      id: "landman",
       bio:
-        "<p>Mr. White serves as Senior Director at Hanover Financial, LLC overseeing the firm’s investment activities in the Bay Area and Pacific Northwest.   Prior to joining Hanover, he served as an Executive Director at PGIM Real Estate responsible for west coast acquisition activities on behalf of PGIM’s open-ended fund series.   Mr. White began his career at KPMG LLP.</p><p>Mr. White holds an MBA from UC Berkeley Haas School of Business and BS degrees in Accounting & Finance from Indiana University’s Kelly School of Business.   Mr. White is a Certified Public Accountant (inactive) and a member of ULI.</p>"
+        "Landman is Director of Capital Markets and Investor Relations, in which capacity he is responsible for identifying and establishing new, and overseeing existing relationships, as well as capitalizing all developments and acquisitions. <br/><br/> Prior to joining Geneva Landman held a similar position with Universe Holdings, and before that he worked in New York, Europe and Israel as a real estate broker. Landman was born and raised in Antwerp Belgium, speaks six languages fluently, and is a graduate of Jerusalem College of Technology. "
     },
     {
-      name: "David White",
-      title: "Multifamily Sr. Director (Northern California/Seattle/Portland)",
-      linkedin: "https://www.linkedin.com/in/david-white-a3593b11/",
-      email: "mailto:dwhite@hanoverfinancialllc.com",
-      phone: "(415) 519-3434",
-      picture: "white.jpg",
-      id: "white",
+      name: "Beatriz Babuch",
+      title: "Director of Property Management and Renovations",
+      linkedin: "https://www.linkedin.com/in/",
+      email: "mailto:",
+      phone: "(888) 888-8888",
+      picture: "placeholder_person.png",
+      id: "babuch",
       bio:
-        "<p>Mr. White serves as Senior Director at Hanover Financial, LLC overseeing the firm’s investment activities in the Bay Area and Pacific Northwest.   Prior to joining Hanover, he served as an Executive Director at PGIM Real Estate responsible for west coast acquisition activities on behalf of PGIM’s open-ended fund series.   Mr. White began his career at KPMG LLP.</p><p>Mr. White holds an MBA from UC Berkeley Haas School of Business and BS degrees in Accounting & Finance from Indiana University’s Kelly School of Business.   Mr. White is a Certified Public Accountant (inactive) and a member of ULI.</p>"
-    },
-    {
-      name: "David White",
-      title: "Multifamily Sr. Director (Northern California/Seattle/Portland)",
-      linkedin: "https://www.linkedin.com/in/david-white-a3593b11/",
-      email: "mailto:dwhite@hanoverfinancialllc.com",
-      phone: "(415) 519-3434",
-      picture: "white.jpg",
-      id: "white",
-      bio:
-        "<p>Mr. White serves as Senior Director at Hanover Financial, LLC overseeing the firm’s investment activities in the Bay Area and Pacific Northwest.   Prior to joining Hanover, he served as an Executive Director at PGIM Real Estate responsible for west coast acquisition activities on behalf of PGIM’s open-ended fund series.   Mr. White began his career at KPMG LLP.</p><p>Mr. White holds an MBA from UC Berkeley Haas School of Business and BS degrees in Accounting & Finance from Indiana University’s Kelly School of Business.   Mr. White is a Certified Public Accountant (inactive) and a member of ULI.</p>"
+        "Babuch is Director of Property Management and Renovations, overseeing the portfolio and all asset improvements.  <br/><br/>Babuch is a graduate of the University of Sao Paulo. Prior to entering the real estate field Babuch worked in finance in Brazil and Europe. <br/><br/>Born in Spain and raised in Brazil, Babuch is tri-lingual and the proud single parent of a teenage son who is a college student."
     }
   ]
 ];
-
 var developments = [
   {
     name: "Geneva @ Hughes",
-    image: "geneva_hughes.png",
-    id: "geneva_hughes",
-    location: "Los Angeles, California",
-    type: "Development",
+    location: "Los Angeles (Palms), California ",
+    type: "27 Unit Apartment Development ",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "Geneva assembled a 16,000 square foot parcel located in the Palms area of Los Angeles, within one block of the new Exposition Light Rail Station and within a three mile radius of downtown Culver City, UCLA, Century City and Beverly Hills.  The project was successfully developed and completed. ",
+    image: "geneva_hughes.png",
+    id: "geneva_hughes"
   },
   {
     name: "Geneva @ Hughes North",
-    image: "geneva_hughesNorth.png",
-    id: "geneva_hughesNorth",
-    location: "Los Angeles, California",
-    type: "Development",
+    location: "Los Angeles (Palms), California",
+    type: "50 Unit Apartment Development",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "Geneva is in the process of finalizing an assemblage to develop this project, which is one half block from the Palms Expo Light Rail Station. Additionally the site is within a three mile radius of a number of key employers including Sony Studios, Amazon Studios, 20th Century Fox Studios, Culver Studios, Southern California Hospital and UCLA.",
+    image: "geneva_hughesNorth.png",
+    id: "geneva_hughesNorth"
   },
   {
     name: "Geneva @ Pacific",
-    image: "geneva_pacific.png",
-    id: "geneva_pacific",
-    location: "Los Angeles, California",
-    type: "Development",
+    location: "Los Angeles (Mar Vista), California",
+    type: "18 Unit Apartment Development",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "Geneva is in the process of developing this project, which is within a three mile radius of Venice Beach, Playa Vista, Marina del Rey, UCLA, downtown Santa Monica, and Culver City. Major employers in the immediate area include Google, Yahoo, Hulu, Amazon Studios, Sony Studios, Fandango, YouTube, Univision, Netflix, Loyola Marymount University and UCLA.",
+    image: "geneva_pacific.png",
+    id: "geneva_pacific"
   },
   {
     name: "Geneva @ Venice",
+    location: "Culver City, California ",
+    type: "120 Room Hotel Development ",
+    description:
+      "Geneva assembled this parcel located adjacent to downtown Culver City and within blocks of Sony Studios, Amazon Studios, Home Box Office’s corporate headquarters, and Ivy Exposition Station, and across the street from Southern California Hospital. The site was acquired in 2018 with construction to commence in 2019.",
     image: "geneva_venice.png",
-    id: "geneva_venice",
-    location: "Los Angeles, California",
-    type: "Development",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    name: "Micropolitan at Larchmont Village",
-    image: "micropolitan_larchmont.png",
-    id: "micropolitan_larchmont",
-    location: "Los Angeles, California",
-    type: "Development",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    id: "geneva_venice"
   },
   {
     name: "Micropolitan at Miracle Mile",
-    image: "micropolitan_miracle.png",
-    id: "micropolitan_miracle",
-    location: "Los Angeles, California",
-    type: "Development",
+    location: "Los Angeles (Miracle Mile), California",
+    type: "45 Unit Apartment Development",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "Development of an apartment project within one block of the new Fairfax at Wilshire Subway Station, the Los Angeles County Museum of Art, and the Peterson Automotive Museum. Major employers and amenities within a two mile radius include Cedars Sinai Medical Center, Variety Entertainment Daily, CBS Studios, Farmer’s Market and The Grove. This project was completed and sold.",
+    image: "micropolitan_miracle.png",
+    id: "micropolitan_miracle"
+  },
+  {
+    name: "Micropolitan at Larchmont Village",
+    location: "Los Angeles (Larchmont), California",
+    type: "34 Unit Apartment Development",
+    description:
+      "Development of an apartment project within walking distance of Larchmont Village’s shops and restaurants, Hancock Park, and Paramount Studios. This project is completed.",
+    image: "micropolitan_larchmont.png",
+    id: "micropolitan_larchmont"
+  },
+  {
+    name: "The Garden",
+    location: "Santa Monica, California",
+    type: "144 Unit Apartment Development",
+    description:
+      "Three 48 Unit Apartment Buildings located within a three block radius of one another, in downtown Santa Monica. These projects were completed and sold.",
+    image: "garden.png",
+    id: "garden"
+  },
+  {
+    name: "Vues on Gordon",
+    location: "Los Angeles (Hollywood), California",
+    type: "47 Unit Apartment Development",
+    description:
+      "Development of a Class A apartment project in the thriving Hollywood area of Los Angeles. The project is located within a few blocks of Netflix’s new corporate headquarters and Sunset Gower Studios, as well as Emerson College’s Los Angeles campus. The project is completed.",
+    image: "vues_gordon.png",
+    id: "vues_gordon"
+  },
+  {
+    name: "The Mercury",
+    location: "Los Angeles (Koreatown), California",
+    type: "238 Unit Apartment Development",
+    description:
+      "Located at the bustling intersection of Western and Wilshire Boulevards in the heart of Koreatown directly across the street from the Subway Station, this project was the successful conversation of an office building to apartments and retail. ",
+    image: "mercury.png",
+    id: "mercury"
+  },
+  {
+    name: "Sandstone ",
+    location: "Bellevue, Washington",
+    type: "78 Unit Apartment Development",
+    description:
+      "The project is located in thriving downtown Bellevue across the street from the Civic Auditorium and within walking distance of major employers and retail amenities. This project was completed and sold.",
+    image: "sandstone.png",
+    id: "sandstone"
+  },
+  {
+    name: "Montage",
+    location: "Palo Alto, California",
+    type: "46 Unit Apartment Development",
+    description:
+      "This project is located in the heart of the Silicon Valley, within walking distance of shopping and restaurants; with major employers in the area including Stanford University and Medical Center, Hewlett Packard Enterprise, SAP, Apple, Google and Facebook.",
+    image: "montage.png",
+    id: "montage"
+  },
+  {
+    name: "Starbucks",
+    location:
+      "San Diego (La Mesa) and Los Angeles (Norwalk), California, and Riverside, California",
+    type: "Net Lease Development",
+    description:
+      "Development of two free standing NNN credit tenant projects, each with drive thru service provided. These projects were completed and sold.",
+    image: "starbucks.png",
+    id: "starbucks"
+  },
+  {
+    name: "ALDI ",
+    location: "Los Angeles (Arcadia), California",
+    type: "Net Lease Development",
+    description:
+      "Development of a free standing discount grocery NNN credit tenant (affiliate of Trader Joe’s). This project was completed and sold.",
+    image: "aldi.png",
+    id: "aldi"
+  },
+  {
+    name: "Smart & Final ",
+    location: "Sacramento, California ",
+    type: "Net Lease Development",
+    description:
+      "Development of a free standing discount grocery publicly traded NNN credit tenant. This project was completed and sold.",
+    image: "smartandfinal.png",
+    id: "smartandfinal"
+  },
+  {
+    name: "24 Hour Fitness",
+    location: "Riverside, California",
+    type: "Net Lease Development",
+    description:
+      "Development of an approximate 50,000 square foot NNN credit tenant free standing fitness center. This project was completed and sold.",
+    image: "24hourfitness.png",
+    id: "24hourfitness"
+  },
+  {
+    name: "Safelite Auto Glass",
+    location: "Boulder, Colorado",
+    type: "Net Lease Development",
+    description:
+      "Acquisition and reposition; the tenant is the largest provider of auto glass repair in the United States.",
+    image: "safelite.png",
+    id: "safelite"
+  }
+];
+var repositioning = [
+  {
+    name: "CATO ",
+    location: "Torrance, California",
+    type: "70 Unit Apartment Acquisition/Repositioning",
+    description:
+      "Repositioning of a rent-controlled project: through renovation and re-tenanting increased NOI by 40%. ",
+    image: "cato.png",
+    id: "cato"
+  },
+
+  {
+    name: "Capes at Ventura",
+    location: "Ventura, California",
+    type: "400 Unit Apartment Acquisition/Reposition",
+    description:
+      "Through a joint venture, acquired the asset with the business plan to reposition and sell. Structured with mezzanine and an Agency loan. The project is located in the heart of Ventura across the street from the City and County Government Center and retail district. Capes at Ventura provides an affordable alternative to residents working in the Santa Barbara area, as well as commuters into Los Angeles. The renovation and re-tenanting is currently in process.",
+    image: "capes.png",
+    id: "capes"
+  },
+
+  {
+    name: "Mansfield ",
+    location: "Los Angeles (Hollywood), California",
+    type: "68 Unit Apartment Acquisition/Reposition ",
+    description:
+      "Asset was acquired via a joint venture to reposition and sell. Since acquisition, the property has been renovated with upgraded kitchens and bathrooms, as well as the exterior and common areas. The Hollywood area of Los Angeles is experiencing an extensive renaissance and this asset provides an attractive economic alternative over new projects for residents. ",
+    image: "mansfield.png",
+    id: "mansfield"
+  },
+
+  {
+    name: "Century Place",
+    location: "Los Angeles (Norwalk), California",
+    type: "306 Unit Apartment Acquisition/Reposition",
+    description:
+      "Asset was acquired through a joint venture based upon the strategy to reposition this asset which provides good quality work force housing. This asset was renovated and sold.",
+    image: "century_place.png",
+    id: "century_place"
+  },
+
+  {
+    name: "Basque Manor",
+    location: "Fullerton, California",
+    type: "88 Unit Apartment Acquisition/Reposition",
+    description:
+      "Acquired with a partner via a joint venture, the renovated project provides much needed work force housing in this market. This asset was renovated and sold. ",
+    image: "basque_manor.png",
+    id: "basque_manor"
+  },
+
+  {
+    name: "PACU",
+    location: "Los Angeles (Palms), California",
+    type: "16 Unit Apartment Renovation/Reposition",
+    description:
+      "1960 developed project modernly upgraded to reflect the improvements in the gentrifying submarket. Within walking distance of Expo Light Rail Station, Sony and Amazon Studios, Southern California Hospital, the Kirk Douglas Theater, and Trader Joe’s and Sprouts Markets. ",
+    image: "pacu.png",
+    id: "pacu"
+  },
+  {
+    name: "Azul/Gramercy",
+    location: "Anaheim, California",
+    type: "216 Unit Apartment Acquisition/Reposition ",
+    description:
+      "Two projects located within one mile of one another, consisting of 100 and 116 units respectively. Assets were successfully renovated and re-tenanted, and the properties were sold separately.",
+    image: "azul_gramercy.png",
+    id: "azul_gramercy"
+  },
+
+  {
+    name: "Lakewood Manor",
+    location: "Los Angeles (Lakewood), California",
+    type: "661 Unit Apartment Acquisition/Reposition",
+    description:
+      "Asset was acquired through a joint venture in order to reposition this asset in order to provide good quality work force housing. This asset was renovated and sold. ",
+    image: "lakewood_manor.png",
+    id: "lakewood_manor"
+  },
+
+  {
+    name: "Rancho Azul",
+    location: "San Diego (Spring Valley), California",
+    type: "74 Unit Apartment Acquisition/Reposition",
+    description:
+      "Asset was acquired through a joint venture with the business plan to re-tenant and upgrade in order to provide an unserviced niche in the market of modernized work force housing. This asset was successfully sold.",
+    image: "rancho_azul.png",
+    id: "rancho_azul"
+  },
+
+  {
+    name: "The Bloc",
+    location: "Anaheim, California",
+    type: "84 Unit Apartment Acquisition/Reposition",
+    description:
+      "Separately parceled 1950’s constructed project, repositioned to contemporary work force housing located blocks from Disneyland and the hotels and restaurants surrounding the theme park.",
+    image: "bloc.png",
+    id: "bloc"
+  },
+
+  {
+    name: "Maggie",
+    location: "Seattle, Washington",
+    type: "59 Unit Apartment Acquisition/Reposition ",
+    description:
+      "Acquired with a partner to reposition and re-tenant, as well as take advantage of excess land to build additional units. ",
+    image: "maggie.png",
+    id: "maggie"
+  },
+
+  {
+    name: "Fairway Glen",
+    location: "San Jose, California",
+    type: "144 Unit Apartment Acquisition/Reposition",
+    description:
+      "Fairway Glen was an acquisition to reposition and upgrade a 1970’s apartment project, to compete with new product at more attractive prices. This asset was renovated and sold. ",
+    image: "fairway_glen.png",
+    id: "fairway_glen"
+  }
+];
+var mezzanine = [
+  {
+    name: "Sherman Plaza",
+    location: "Los Angeles (Sherman Oaks), California",
+    type: "270,000 Square Foot Office Building Acquisition",
+    description:
+      "Facilitated the acquisition of a multi-tenant office building with a concentration of government tenants in various sectors.",
+    image: "sherman_plaza.png",
+    id: "sherman_plaza"
+  },
+
+  {
+    name: "ICON Plaza ",
+    location: "Los Angeles, California (University of Southern California)",
+    type: "56 Unit/224 Bed Student Housing Development",
+    description:
+      "A mezzanine loan was provided to facilitate the development of a Class A private student housing project located directly across the street from the University of Southern California (USC), with ground floor retail including a Starbucks and Jimmy John’s Gourmet Sandwiches. ",
+    image: "icon_plaza.png",
+    id: "icon_plaza"
+  },
+
+  {
+    name: "Aldea at Estrella Falls",
+    location: "Phoenix (Goodyear), Arizona",
+    type: "328 Unit Apartment Acquisition",
+    description:
+      "A mezzanine loan was provided to facilitate the acquisition of the project from the existing lender. ",
+    image: "aldea.png",
+    id: "aldea"
+  },
+
+  {
+    name: "Alexan ",
+    location: "Denver (Littleton), Colorado",
+    type: "350 Unit Apartment Acquisition",
+    description:
+      "A mezzanine loan was provided to facilitate the acquisition of the project from the existing lender. ",
+    image: "alexan.png",
+    id: "alexan"
+  },
+
+  {
+    name: "Domus on the Boulevard Apartments",
+    location: "Mountain View, California ",
+    type: "193 Unit Apartment Development ",
+    description:
+      "A mezzanine loan was provided to facilitate the development of the project.",
+    image: "domus.png",
+    id: "domus"
+  },
+
+  {
+    name: "Brio",
+    location: "Walnut Creek, California",
+    type: "300 Unit Luxury Apartment Development",
+    description:
+      "A mezzanine loan was provided to facilitate the development of the project.",
+    image: "brio.png",
+    id: "brio"
+  },
+
+  {
+    name: "Loreto ",
+    location: "Las Vegas, Nevada",
+    type: "406 Unit Luxury Apartment Acquisition",
+    description: "Bank distressed sale, acquired at a very attractive basis.",
+    image: "loreto.png",
+    id: "loreto"
+  },
+
+  {
+    name: "Palacio",
+    location: "Las Vegas, Nevada",
+    type: "333 Unit Luxury Apartment Acquisition",
+    description:
+      "Bank distressed sale, acquired at a very attractive basis and sold.",
+    image: "palacio.png",
+    id: "palacio"
+  },
+
+  {
+    name: "Winston Plaza",
+    location: "Chicago (Melrose Park), Illinois ",
+    type: "350,000 Square Foot Retail Center Refinance ",
+    description:
+      "Retail center anchored by Marshalls, LA Fitness, Best Buy, Office Max, Chick Fil-A, PNC Bank, IHOP, and Dunkin Donuts. Facilitated this refinance for capital improvements to the center and development of new pads.",
+    image: "winston_plaza.png",
+    id: "winston_plaza"
   }
 ];
 /* GET home page. */
@@ -1447,6 +597,22 @@ router.get("/projects/developments", function(req, res, next) {
     page: "projects",
     headerTitle: "Developments",
     developments: developments
+  });
+});
+
+router.get("/projects/repositioning", function(req, res, next) {
+  res.render("repositioning", {
+    page: "projects",
+    headerTitle: "Repositioning",
+    repositioning: repositioning
+  });
+});
+
+router.get("/projects/mezzanine", function(req, res, next) {
+  res.render("mezzanine", {
+    page: "projects",
+    headerTitle: "Mezzanine/Preferred Equity Investments",
+    mezzanine: mezzanine
   });
 });
 

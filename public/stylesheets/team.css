@@ -1,8 +1,7 @@
 .team.masthead.basic.segment {
   margin: 0 0;
   height: 450px;
-  background: url("https://picsum.photos/1922/1080/?random") no-repeat center
-    center;
+  background: url("/images/temp_background.png") no-repeat center center;
   -webkit-background-size: cover; /* For WebKit*/
   -moz-background-size: cover; /* Mozilla*/
   -o-background-size: cover; /* Opera*/

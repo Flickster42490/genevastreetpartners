@@ -17,8 +17,7 @@
 .about.masthead.basic.segment {
   margin: 0 0;
   height: 450px;
-  background: url("https://picsum.photos/1922/1080/?random") no-repeat center
-    center;
+  background: url("/images/temp_background.png") no-repeat center center;
   -webkit-background-size: cover; /* For WebKit*/
   -moz-background-size: cover; /* Mozilla*/
   -o-background-size: cover; /* Opera*/
@@ -62,7 +61,7 @@
 }
 
 .about .large.header {
-  font-size: 2.25em;
+  font-size: 2em;
 }
 
 .about .large.header.aquamarine,
@@ -97,139 +96,14 @@
   padding: 0;
 }
 
-.tree ul {
-  padding-top: 40px;
-  position: relative;
-
-  transition: all 0.1s;
-  -webkit-transition: all 0.1s;
-  -moz-transition: all 0.1s;
+.ui.vertical.divider:before {
+  top: -80% !important;
+  height: calc(100% - 1rem) !important;
 }
 
-.tree li {
-  float: left;
-  text-align: center;
-  list-style-type: none;
-  position: relative;
-  padding: 60px 5px 0 5px;
-
-  transition: all 0.1s;
-  -webkit-transition: all 0.1s;
-  -moz-transition: all 0.1s;
-}
-
-/*We will use ::before and ::after to draw the connectors*/
-.tree li::before,
-.tree li::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 60%;
-  border-top: 3px solid #003e82;
-  width: 50%;
-  height: 60px;
-}
-
-.tree h2::before {
-  visible: none;
-}
-.tree h2::after {
-  content: "";
-  position: absolute;
-  top: 97px;
-  right: 44%;
-  border-top: 3px solid #003e82;
-  width: 125px;
-  height: 30px;
-}
-
-.tree li::after {
-  right: auto;
-  left: 50%;
-  border-left: 3px solid #003e82;
-}
-
-/*We need to remove left-right connectors from elements without
-any siblings*/
-.tree li:only-child::after,
-.tree li:only-child::before {
-  display: none;
-}
-
-/*Remove space from the top of single children*/
-.tree li:only-child {
-  padding-top: 0;
-}
-
-/*Remove left connector from first child and
-right connector from last child*/
-.tree li:first-child::before,
-.tree li:last-child::after {
-  border: 0 none;
-}
-
-/*Adding back the vertical connector to the last nodes*/
-.tree li:last-child::before {
-  border-right: 3px solid #003e82;
-  border-radius: 0 5px 0 0;
-  -webkit-border-radius: 0 5px 0 0;
-  -moz-border-radius: 0 5px 0 0;
-}
-
-.tree li:first-child::after {
-  border-radius: 5px 0 0 0;
-  -webkit-border-radius: 5px 0 0 0;
-  -moz-border-radius: 5px 0 0 0;
-}
-
-/*Time to add downward connectors from parents*/
-.tree ul ul::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  left: 49.5%;
-  border-left: 3px solid #003e82;
-  width: 0;
-  height: 100px;
-}
-
-.tree li h2 {
-  border: 3px solid darkgray;
-  padding: 20px 40px;
-  text-decoration: none;
-  font-size: 2.5em;
-  font-weight: 200;
-  display: inline-block;
-  margin-bottom: 0px;
-  margin-right: 100px;
-  margin-left: 20px;
-
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-
-  transition: all 0.1s;
-  -webkit-transition: all 0.1s;
-  -moz-transition: all 0.1s;
-}
-
-.tree li h3 {
-  border: 3px solid darkgray;
-  padding: 20px 40px;
-  text-decoration: none;
-  font-size: 2em;
-  font-weight: 200;
-  display: inline-block;
-  margin-bottom: 0px;
-  margin-right: 30px;
-
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-
-  transition: all 0.1s;
-  -webkit-transition: all 0.1s;
-  -moz-transition: all 0.1s;
+.ui.vertical.divider:after {
+  bottom: 14px !important;
+  height: calc(100% - 1rem) !important;
 }
 
 @media only screen and (max-width: 1150px) {

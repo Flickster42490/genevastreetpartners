@@ -5,17 +5,21 @@
       <% for(var i=0; i < developments.length; i++) { %>
       <div class="image">
         <div class="ui inverted dimmer">
-          <div
+          <a
             class="content"
             id="<%= developments[i].id %>"
             data-toggle="modal"
             data-target="#<%= developments[i].id %>-modal"
           >
-            <h1><%= developments[i].name %></h1>
-            <br />
-            <h3><%= developments[i].location %></h3>
-            <h3><%= developments[i].type %></h3>
-          </div>
+            <div style="margin-top: 80px;">
+              <h1 style="color: #84B21E; font-weight: 600">
+                <%= developments[i].name %>
+              </h1>
+              <br />
+              <h4 style="color: #000"><%= developments[i].location %></h4>
+              <h4 style="color: #000"><%= developments[i].type %></h4>
+            </div>
+          </a>
         </div>
         <img class="ui image" src="/images/<%= developments[i].image %>" />
       </div>
@@ -25,34 +29,58 @@
   </div>
   <% for(var i=0; i < developments.length; i++) { %>
 
+  <!-- Modal content-->
   <div id="<%= developments[i].id %>-modal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-xl">
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title"><%= developments[i].name %></h4>
-          <button type="button" class="close" data-dismiss="modal">
-            &times;
-          </button>
+          <div class="ui stackable grid container">
+            <div class="two column row" style="padding: 0;">
+              <div
+                class="left aligned fourteen wide column"
+                style="margin-left: 0;"
+              >
+                <div class="ui basic segment">
+                  <h1 class="ui header"><%= developments[i].name %></h1>
+                  <h4>
+                    <%= developments[i].location %> | <%= developments[i].type
+                    %>
+                  </h4>
+                </div>
+              </div>
+              <div class="right aligned one wide column">
+                <a
+                  class="closeModal"
+                  data-dismiss="modal"
+                  data-modal="<%= developments[i] %>-modal"
+                  ><h1>&times;</h1></a
+                >
+              </div>
+            </div>
+          </div>
         </div>
         <div class="modal-body">
           <img
             class="ui image"
             src="/images/<%= developments[i].image %>"
-            style="width: 80%"
+            style="max-width: 90%; max-height: 450px"
           />
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            Close
-          </button>
+          <div class="ui stackable grid container">
+            <div class="row">
+              <div class="left aligned column">
+                <div class="ui basic segment">
+                  <h4><%= developments[i].description %></h4>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <% }%>
 
-  <!-- <div class="image">
+    <!-- <div class="image">
         <div class="ui inverted dimmer"><div class="content"></div></div>
         <img class="ui image" src="../images/geneva_hughes.png" />
       </div>
@@ -81,4 +109,6 @@
         <div class="ui inverted dimmer"><div class="content"></div></div>
         <img class="ui image" src="../images/about-hero-image.png" />
       </div> -->
+  </div>
+  <% }%>
 </div>

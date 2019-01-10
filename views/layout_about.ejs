@@ -19,7 +19,7 @@
 
     <!-- CSS -->
     <link
-      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto:100|Quicksand"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto|Quicksand"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/stylesheets/dependencies/semantic.css" />
@@ -102,18 +102,17 @@
     <div class="ui fixed menu" style="display: block">
       <div class="ui container">
         <a class="ui left geneva-logo" href="/home">
-          <img src="/images/geneva_logo.png" />
+          <img src="/images/geneva_logo_inverted.png" />
         </a>
         <div class="right menu">
+          <a class="item home" href="/home">HOME</a>
           <a class="item about" href="/about">ABOUT</a>
-          <a class="item portfolio" href="/projects">PROJECTS</a>
-
-          <a class="item login" href="/login">INVESTOR LOGIN</a>
+          <a class="item projects" href="/projects">PROJECTS</a>
+          <a class="item login" href="/">INVESTOR LOGIN</a>
           <a class="item contact" href="/contact">CONTACT</a>
           <a class="item contact" href="/careers">CAREERS</a>
         </div>
       </div>
-      <br />
       <div
         class="ui inverted  menu"
         style="background: #84B21E; width: 100%; border-radius: 0;"
@@ -166,8 +165,8 @@
         <div class="ui hidden divider"></div>
         <div class="ui hidden divider"></div>
         <div class="column">
-          <h1 class="ui huge inverted header hero-header">
-            <%= headerTitle %>
+          <h1 class="ui huge inverted header hero-header lined-header">
+            <span><%= headerTitle %></span>
           </h1>
         </div>
         <div class="ui hidden divider"></div>
