@@ -545,7 +545,11 @@ var mezzanine = [
 ];
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("home", { page: "home", headerTitle: "Relationship Based" });
+  res.render("home", {
+    page: "home",
+    headerTitle: "Relationship Based",
+    developments: developments
+  });
 });
 
 router.get("/about", function(req, res, next) {
@@ -621,7 +625,11 @@ router.get("/contact", function(req, res, next) {
 });
 
 router.get("/home", function(req, res, next) {
-  res.render("home", { page: "home", headerTitle: "Relationship Based" });
+  res.render("home", {
+    page: "home",
+    headerTitle: "Relationship Based",
+    developments: developments
+  });
 });
 
 router.get("/login", function(req, res, next) {

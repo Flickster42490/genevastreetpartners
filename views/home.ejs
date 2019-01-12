@@ -96,15 +96,42 @@
     </div>
     <div class="row">
       <div id="jLightroom" class="jlr">
-        <div><img src="../images/about-hero-image.jpg" /></div>
-        <div><img src="../images/davidson.jpg" /></div>
-        <div><img src="../images/tevrizian.jpg" /></div>
-        <div><img src="../images/saintJohn.jpg" /></div>
-        <div><img src="../images/macedo.jpg" /></div>
-        <div><img src="../images/about-hero-image.jpg" /></div>
-        <div><img src="../images/about-hero-image.jpg" /></div>
+        <div class="ui center aligned stackable grid container">
+          <div class="row">
+            <div id="jLightroom" class="jlr">
+              <% for(var i=0; i < developments.length; i++) { %>
+              <div class="image">
+                <div class="ui inverted dimmer">
+                  <a
+                    class="content"
+                    id="<%= developments[i].id %>"
+                    data-toggle="modal"
+                    data-target="#<%= developments[i].id %>-modal"
+                  >
+                    <div style="margin-top: 80px;">
+                      <h1 style="color: #84B21E; font-weight: 600">
+                        <%= developments[i].name %>
+                      </h1>
+                      <br />
+                      <h4 style="color: #000">
+                        <%= developments[i].location %>
+                      </h4>
+                      <h4 style="color: #000"><%= developments[i].type %></h4>
+                    </div>
+                  </a>
+                </div>
+                <img
+                  class="ui image"
+                  src="/images/<%= developments[i].image %>"
+                />
+              </div>
+
+              <% }%>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="ui hidden divider"></div>
   </div>
-  <div class="ui hidden divider"></div>
 </div>
